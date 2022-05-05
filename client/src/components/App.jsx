@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Appbar from './Appbar.jsx';
+import Nav from './Nav.jsx';
 import * as Scroll from 'react-scroll';
+
 import {
    Link,
    Button,
@@ -23,8 +24,8 @@ const App = () => {
       marginLeft: '15rem',
    };
    return (
-      <div>
-         <Appbar />
+      <div className='root'>
+         <Nav />
          <Box style={containerStyle}>
             <Element id='home'>
                <React.Suspense fallback={'Loading...'}>
