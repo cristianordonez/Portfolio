@@ -1,0 +1,46 @@
+{
+   "name": "portfolio-custom-template",
+   "version": "1.0.0",
+   "description": "Custom template for creating portfolios",
+   "main": "server.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "server-dev": "nodemon server/server.js",
+      "start": "npx webpack serve --open",
+      "react-dev": "npx webpack --config webpack.config.js --mode development --watch"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/cristianordonez/portfolio-custom-template.git"
+   },
+   "author": "Cristian Ordonez",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/cristianordonez/portfolio-custom-template/issues"
+   },
+   "homepage": "https://github.com/cristianordonez/portfolio-custom-template#readme",
+   "dependencies": {
+      "@emotion/react": "^11.9.0",
+      "@emotion/styled": "^11.8.1",
+      "@mui/icons-material": "^5.6.2",
+      "@mui/material": "^5.6.4",
+      "cors": "^2.8.5",
+      "express": "^4.18.1",
+      "react": "^18.1.0",
+      "react-dom": "^18.1.0",
+      "react-router-dom": "^6.3.0",
+      "react-scroll": "^1.8.7"
+   },
+   "devDependencies": {
+      "@babel/core": "^7.17.10",
+      "@babel/preset-env": "^7.17.10",
+      "@babel/preset-react": "^7.16.7",
+      "babel-loader": "^8.2.5",
+      "css-loader": "^6.7.1",
+      "file-loader": "^6.2.0",
+      "prettier": "2.6.2",
+      "webpack": "^5.72.0",
+      "webpack-cli": "^4.9.2",
+      "webpack-dev-server": "^4.9.0"
+   }
+}
