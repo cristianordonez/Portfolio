@@ -2,9 +2,9 @@ import React from 'react';
 import './styles/nav.css';
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
+import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Avatar from '@mui/material/Avatar';
 import Logo from '../img/logo.svg';
 import * as Scroll from 'react-scroll';
 import {
@@ -17,13 +17,18 @@ import {
    scroller,
    ScrollLink,
 } from 'react-scroll';
-const drawerWidth = 200;
+
+const drawerWidth = 160;
 
 const Nav = () => {
    const logoStyle = {
-      height: '12rem',
-      width: '12rem',
+      height: '10rem',
+      width: '10rem',
    };
+   const listStyle = {
+      marginTop: '15rem',
+   };
+
    return (
       <div>
          <Drawer
@@ -40,7 +45,7 @@ const Nav = () => {
          >
             <img src={Logo} style={logoStyle}></img>
 
-            <List>
+            <List style={listStyle}>
                <Divider />
                {['home', 'myskills', 'projects', 'contact'].map(
                   (text, index) => (

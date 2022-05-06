@@ -25,7 +25,7 @@ const theme = createTheme({
          primary: '#ffffff',
          secondary: '#ffe2fe',
       },
-      divider: '#909096',
+      divider: '#4E5558',
    },
    typography: {
       fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
