@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Nav from './Nav.jsx';
+import Sidebar from './Sidebar.jsx';
 import * as Scroll from 'react-scroll';
 
 import {
@@ -23,9 +23,13 @@ const App = () => {
    const containerStyle = {
       marginLeft: '15rem',
    };
+   const rootStyle = {
+      minHeight: '100vh',
+      minWidth: '100vw',
+   };
    return (
-      <div className='root'>
-         <Nav />
+      <div style={rootStyle}>
+         <Sidebar />
          <Box style={containerStyle}>
             <Element id='home'>
                <React.Suspense fallback={'Loading...'}>
