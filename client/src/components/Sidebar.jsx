@@ -42,6 +42,9 @@ const Sidebar = () => {
       justifyContent: 'center',
       alignItems: 'center',
    };
+   // const iconStyle = {
+   //    color:
+   // }
 
    return (
       <Drawer

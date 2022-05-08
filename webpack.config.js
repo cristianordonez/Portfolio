@@ -33,7 +33,7 @@ module.exports = {
          {
             //enables webpack to handle css files
             test: /\.css$/i,
-            exclude: /node_modules/,
+            // exclude: /node_modules/,
             use: ['style-loader', 'css-loader'],
          },
          {

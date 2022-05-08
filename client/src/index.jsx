@@ -9,6 +9,11 @@ const { augmentColor } = palette;
 const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
 
 const theme = createTheme({
+   zIndex: {
+      typography: 1,
+      drawer: 1,
+      box: 1,
+   },
    palette: {
       type: 'light',
       primary: {
@@ -29,6 +34,7 @@ const theme = createTheme({
    },
    typography: {
       fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
+
       h1: {
          fontSize: '5rem',
          fontWeight: 500,
@@ -45,6 +51,14 @@ const theme = createTheme({
       },
    },
 });
+
+const colors = {
+   mainBackground: '#081426',
+   secondary: '#60FFD9',
+   middle: '#939196',
+   lighter: '#D3C1D2',
+   lightest: '#FEE1FD',
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

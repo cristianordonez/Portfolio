@@ -1,0 +1,22 @@
+/* .text-line-1 {
+   animation: hideshow 3s ease infinite;
+}
+
+@keyframes hideshow {
+   0% {
+      opacity: 1;
+   }
+   10% {
+      opacity: 1;
+   }
+   15% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 0;
+   }
+} */
+
+.text-line-1 {
+   color: black;
+}
