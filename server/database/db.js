@@ -11,15 +11,18 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const Schema = mongoose.Schema;
 
 const RepoSchema = new Schema({
+   _id: Number,
    name: {
       type: String,
       required: true,
-      unique: 'Movie was already in list',
+      unique: 'Repo is already stored',
    },
+   description: String,
+   url: String,
 });
 
-const RepoModel = mongoose.model('RepoModel', RepoSchema);
+const Repo = mongoose.model('Repo', RepoSchema);
 
 module.exports = {
-   RepoModel,
+   Repo,
 };

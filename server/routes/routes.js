@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const controllers = require('../controllers/controllers');
 
 router.get('/', (req, res) => {
-   res.send('Here in repos router!!!');
+   controllers.repos.getRepos(req, res);
+});
+
+router.post('/', (req, res) => {
+   controllers.repos.storeRepos(req, res);
 });
 
 module.exports = router;

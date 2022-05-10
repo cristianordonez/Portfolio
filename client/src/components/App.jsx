@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from './Sidebar.jsx';
 import * as Scroll from 'react-scroll';
 import './styles/app.css';
-import LandingPage from '../img/../img/LandingPage.jsx';
-
+import LandingPage from './pages/LandingPage.jsx';
 import {
    Link,
    Button,
@@ -14,21 +13,36 @@ import {
    scroller,
 } from 'react-scroll';
 import Box from '@mui/material/Box';
+import axios from 'axios';
 
 // import { Routes, Route, Link } from 'react-router-dom';
 const Home = React.lazy(() => import('./pages/Home.jsx'));
 const MySkills = React.lazy(() => import('./pages/MySkills.jsx'));
-const Projects = React.lazy(() => import('./pages/Projects.jsx'));
+const ProjectList = React.lazy(() =>
+   import('./pages/Projects/ProjectList.jsx')
+);
 const Contact = React.lazy(() => import('./pages/Contact.jsx'));
 
 const App = () => {
-   // const containerStyle = {
-   //    marginLeft: '15rem',
-   // };
+   const [repos, setRepos] = useState([]);
+
+   useEffect(() => {
+      axios
+         .get('/api/repos')
+         .then((repos) => {
+            console.log('repos.data:', JSON.stringify(repos.data, null, 4));
+            setRepos(repos.data);
+         })
+         .catch((err) => {
+            console.log('err.response:', err.response);
+         });
+   }, []);
+
    // const rootStyle = {
    //    minHeight: '100vh',
    //    minWidth: '100vw',
    // };
+
    return (
       <div className='curtain'>
          <div className='curtain_wrapper'>
@@ -49,9 +63,9 @@ const App = () => {
                         <MySkills />
                      </React.Suspense>
                   </Element>
-                  <Element id='projects'>
+                  <Element id='projectlist'>
                      <React.Suspense fallback={'Loading...'}>
-                        <Projects />
+                        <ProjectList repos={repos} />
                      </React.Suspense>
                   </Element>
                   <Element id='contact'>

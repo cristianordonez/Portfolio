@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../components/styles/landingpage.css';
+import '../styles/landingpage.css';
 
 const LandingPage = (props) => (
    <svg

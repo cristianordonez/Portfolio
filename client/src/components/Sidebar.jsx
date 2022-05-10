@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import Logo from '../img/logo.svg';
+import Logo from './img/logo.svg';
 import * as Scroll from 'react-scroll';
 import {
    Link,
