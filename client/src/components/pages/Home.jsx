@@ -31,44 +31,6 @@ const Home = () => {
                navigate user experience that is accessible to all people.
             </Typography>
          </Box>
-         {/* <Box >
-            <img
-               className='animate__animated animate__bounce animate__delay-0.5s'
-               src='https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-0.5s'
-               src='https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-0.6s'
-               src='https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-0.8s'
-               src='https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-1s'
-               src='https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-1.2s'
-               src='https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-1.4s'
-               src='https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-1.6s'
-               src='https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white'
-            ></img>
-            <img
-               className='animate__animated animate__bounce animate__delay-1.8s'
-               src='https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white'
-            ></img>
-         </Box> */}
       </Box>
    );
 };

@@ -19,7 +19,7 @@
 }
 
 .curtain_prize {
-   background: #333;
+   background: #06101e;
    position: absolute; /* Forces the prize position into the container start */
    z-index: 1; /* Places the prize behind the panels, which are z-index 2 */
    width: 100%;
@@ -38,6 +38,3 @@ input[type='checkbox'] {
 input[type='checkbox']:checked ~ div.curtain_panel {
    transform: translateX(-200%);
 }
-/* input[type='checkbox']:checked ~ div.curtain_panel--right {
-   transform: translateX(100%);
-} */

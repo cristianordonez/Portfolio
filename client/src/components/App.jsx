@@ -3,7 +3,7 @@ import Sidebar from './Sidebar.jsx';
 import * as Scroll from 'react-scroll';
 import './styles/app.css';
 import LandingPage from '../img/../img/LandingPage.jsx';
-import Test from '../landing-page_1.svg';
+
 import {
    Link,
    Button,
@@ -35,7 +35,6 @@ const App = () => {
             <input type='checkbox' />
             <div className='curtain_panel'>
                <LandingPage style={{ height: '100%' }} />
-               {/* <img style={{ height: '100%' }} src={Test}></img> */}
             </div>
             <div className='curtain_prize'>
                <Sidebar />
