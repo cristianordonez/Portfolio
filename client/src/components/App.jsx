@@ -19,7 +19,7 @@ import axios from 'axios';
 const Home = React.lazy(() => import('./pages/Home.jsx'));
 const MySkills = React.lazy(() => import('./pages/MySkills.jsx'));
 const ProjectList = React.lazy(() =>
-   import('./pages/Projects/ProjectList.jsx')
+   import('./pages/project-components/ProjectList.jsx')
 );
 const Contact = React.lazy(() => import('./pages/Contact.jsx'));
 
@@ -30,7 +30,6 @@ const App = () => {
       axios
          .get('/api/repos')
          .then((repos) => {
-            console.log('repos.data:', JSON.stringify(repos.data, null, 4));
             setRepos(repos.data);
          })
          .catch((err) => {
@@ -47,10 +46,10 @@ const App = () => {
       <div className='curtain'>
          <div className='curtain_wrapper'>
             <input type='checkbox' />
-            <div className='curtain_panel'>
-               <LandingPage style={{ height: '100%' }} />
+            <div className='curtain_cover'>
+               <LandingPage />
             </div>
-            <div className='curtain_prize'>
+            <div className='main_content'>
                <Sidebar />
                <Box>
                   <Element id='home'>

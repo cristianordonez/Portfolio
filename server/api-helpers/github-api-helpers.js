@@ -1,10 +1,10 @@
 const token = require('../config/config').GITHUB_API_TOKEN;
 const axios = require('axios');
 //url for getting ALL repos
-//// const url = 'https://api.github.com/users/cristianordonez/repos';
+const allReposUrl = 'https://api.github.com/user/repos';
 
 //url for getting public repos
-const url = 'https://api.github.com/user/repos';
+const url = 'https://api.github.com/users/cristianordonez/repos';
 
 const getReposFromGithub = () => {
    let promise = axios.get(url, {

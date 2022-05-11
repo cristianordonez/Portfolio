@@ -6,6 +6,7 @@ const LandingPage = (props) => (
       viewBox='0 0 2560 1440'
       xmlns='http://www.w3.org/2000/svg'
       xmlnsXlink='http://www.w3.org/1999/xlink'
+      preserveAspectRatio='none'
       xmlSpace='preserve'
       style={{
          fillRule: 'evenodd',
