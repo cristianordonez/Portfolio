@@ -1,19 +1,39 @@
 const token = require('../config/config').GITHUB_API_TOKEN;
 const axios = require('axios');
-//url for getting ALL repos
-const allReposUrl = 'https://api.github.com/user/repos';
 
-//url for getting public repos
+//REST api url for getting public repos
 const url = 'https://api.github.com/users/cristianordonez/repos';
 
+//GraphQL endpoint url
+const graphQLUrl = 'https://api.github.com/graphql';
+
+let graphQLQuery = {
+   query: `{
+  search(query: "user:cristianordonez is:public", type: REPOSITORY, first: 100) {
+    repositoryCount
+    nodes {
+      ... on Repository {
+        id
+        name
+        openGraphImageUrl
+        description
+        homepageUrl
+        url
+      }
+    }
+  }
+}`,
+};
+
 const getReposFromGithub = () => {
-   let promise = axios.get(url, {
+   let promise = axios.post(graphQLUrl, graphQLQuery, {
       headers: {
-         Authorization: `token ${token}`,
+         Authorization: `bearer ${token}`,
       },
    });
    let promiseData = promise.then((response) => {
-      return response;
+      console.log('response:', response.data.data.search.nodes);
+      return response.data.data.search.nodes;
    });
    return promiseData;
 };

@@ -11,13 +11,15 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const Schema = mongoose.Schema;
 
 const RepoSchema = new Schema({
-   _id: Number,
+   _id: String,
    name: {
       type: String,
       required: true,
       unique: 'Repo is already stored',
    },
+   openGraphImageUrl: String,
    description: String,
+   homepageUrl: String,
    url: String,
 });
 

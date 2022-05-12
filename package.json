@@ -5,9 +5,9 @@
    "main": "server.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "server-dev": "nodemon server/server.js",
-      "react-dev": "npx webpack serve --open",
-      "start": "npx webpack --config webpack.config.js --mode development --watch"
+      "start": "nodemon server/server.js & npx webpack serve --open",
+      "serve": "npx webpack serve --open",
+      "react-dev": "npx webpack --config webpack.config.js --mode development --watch"
    },
    "repository": {
       "type": "git",
@@ -34,6 +34,7 @@
       "react": "^18.1.0",
       "react-dom": "^18.1.0",
       "react-router-dom": "^6.3.0",
+      "react-router-hash-link": "^2.4.3",
       "react-scroll": "^1.8.7"
    },
    "devDependencies": {

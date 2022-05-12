@@ -19,7 +19,7 @@ module.exports = {
       storeRepos: async function (req, res) {
          try {
             let repos = await githubAPIHelper.getReposFromGithub();
-            repos.data.forEach((repo) => {
+            repos.forEach((repo) => {
                models.repos.storeRepos(repo);
             });
             res.send('repos have been stored');

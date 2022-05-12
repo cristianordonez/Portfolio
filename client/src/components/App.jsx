@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Sidebar from './Sidebar.jsx';
+import Sidebar from './pages/Sidebar.jsx';
 import * as Scroll from 'react-scroll';
-import './styles/app.css';
-import LandingPage from './pages/LandingPage.jsx';
+
 import {
    Link,
    Button,
@@ -13,6 +12,7 @@ import {
    scroller,
 } from 'react-scroll';
 import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
 import axios from 'axios';
 
 // import { Routes, Route, Link } from 'react-router-dom';
@@ -37,45 +37,45 @@ const App = () => {
          });
    }, []);
 
-   // const rootStyle = {
-   //    minHeight: '100vh',
-   //    minWidth: '100vw',
-   // };
+   const rootStyle = {
+      minHeight: '100%',
+      minWidth: '100%',
+      backgroundColor: '#081426',
+   };
+   const mainContentStyle = {
+      paddingLeft: '30%',
+      paddingRight: '20%',
+   };
+   const pageContentStyle = {
+      minHeight: '100vh',
+   };
 
    return (
-      <div className='curtain'>
-         <div className='curtain_wrapper'>
-            <input type='checkbox' />
-            <div className='curtain_cover'>
-               <LandingPage />
-            </div>
-            <div className='main_content'>
-               <Sidebar />
-               <Box>
-                  <Element id='home'>
-                     <React.Suspense fallback={'Loading...'}>
-                        <Home />
-                     </React.Suspense>
-                  </Element>
-                  <Element id='myskills'>
-                     <React.Suspense fallback={'Loading...'}>
-                        <MySkills />
-                     </React.Suspense>
-                  </Element>
-                  <Element id='projectlist'>
-                     <React.Suspense fallback={'Loading...'}>
-                        <ProjectList repos={repos} />
-                     </React.Suspense>
-                  </Element>
-                  <Element id='contact'>
-                     <React.Suspense fallback={'Loading...'}>
-                        <Contact />
-                     </React.Suspense>
-                  </Element>
-               </Box>
-            </div>
-            {/* <div className='curtain_panel curtain_panel--right'></div> */}
-         </div>
+      <div style={rootStyle}>
+         <CssBaseline />
+         <Sidebar />
+         <Box style={mainContentStyle}>
+            <Element style={pageContentStyle} id='home'>
+               <React.Suspense fallback={'Loading...'}>
+                  <Home />
+               </React.Suspense>
+            </Element>
+            <Element style={pageContentStyle} id='myskills'>
+               <React.Suspense fallback={'Loading...'}>
+                  <MySkills />
+               </React.Suspense>
+            </Element>
+            <Element style={pageContentStyle} id='projects'>
+               <React.Suspense fallback={'Loading...'}>
+                  <ProjectList repos={repos} />
+               </React.Suspense>
+            </Element>
+            <Element style={pageContentStyle} id='contact'>
+               <React.Suspense fallback={'Loading...'}>
+                  <Contact />
+               </React.Suspense>
+            </Element>
+         </Box>
       </div>
    );
 };

@@ -14,8 +14,10 @@ module.exports = {
          db.Repo.create({
             _id: repo.id,
             name: repo.name,
+            openGraphImageUrl: repo.openGraphImageUrl,
             description: repo.description,
-            url: repo.html_url,
+            homepageUrl: repo.homepageUrl,
+            url: repo.url,
          });
       },
       //todo

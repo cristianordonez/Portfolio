@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App.jsx';
-import CssBaseline from '@mui/material/CssBaseline';
-import { BrowserRouter } from 'react-router-dom';
+import LandingPage from './components/pages/LandingPage.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const { palette } = createTheme();
 const { augmentColor } = palette;
@@ -20,7 +20,13 @@ const theme = createTheme({
          main: '#081426',
       },
       secondary: {
-         main: '#f50057',
+         main: '#A3FCFA',
+      },
+      neutral: {
+         main: '#3D919F',
+      },
+      contrast: {
+         main: '#F07C41',
       },
       background: {
          default: '#2A2A2A',
@@ -34,7 +40,6 @@ const theme = createTheme({
    },
    typography: {
       fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
-
       h1: {
          fontSize: '5rem',
          fontWeight: 500,
@@ -49,6 +54,12 @@ const theme = createTheme({
       h4: {
          fontSize: '2rem',
       },
+      body1: {
+         fontSize: '1.1rem',
+      },
+      subtitle1: {
+         color: '#A3FCFA',
+      },
    },
 });
 
@@ -56,7 +67,7 @@ const colors = {
    mainBackground: '#081426',
    secondary: '#60FFD9',
    middle: '#939196',
-   lighter: '#D3C1D2',
+   lighter: '#A3FCFA',
    lightest: '#FEE1FD',
 };
 
@@ -65,8 +76,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <BrowserRouter>
       <ThemeProvider theme={theme}>
-         <CssBaseline />
-         <App />
+         <Routes>
+            <Route path='/' element={<LandingPage />}></Route>
+            <Route path='/home' element={<App />}></Route>
+         </Routes>
       </ThemeProvider>
    </BrowserRouter>
 );
