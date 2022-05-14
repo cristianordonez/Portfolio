@@ -2,6 +2,7 @@ const db = require('../database/db');
 
 module.exports = {
    repos: {
+      //handles fetching repos from db
       getRepos: function () {
          let promise = db.Repo.find();
          let promiseData = promise.then((repos) => {
@@ -10,7 +11,9 @@ module.exports = {
          });
          return promiseData;
       },
+      //handles storing new repos
       storeRepos: function (repo) {
+         console.log('repo:', repo);
          db.Repo.create({
             _id: repo.id,
             name: repo.name,
@@ -20,7 +23,23 @@ module.exports = {
             url: repo.url,
          });
       },
-      //todo
-      updateReps: function (repo) {},
+      //handles updating repo triggered by webhook
+      updateRepo: function (repo) {
+         let document = db.Repo.findOneAndUpdate(
+            { _id: repo.id },
+            {
+               _id: repo.id,
+               name: repo.name,
+               openGraphImageUrl: repo.openGraphImageUrl,
+               description: repo.description,
+               homepageUrl: repo.homepage,
+               url: repo.url,
+            },
+            {
+               new: true,
+            }
+         );
+         return document;
+      },
    },
 };

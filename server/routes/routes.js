@@ -10,6 +10,9 @@ router.post('/', (req, res) => {
    controllers.repos.storeRepos(req, res);
 });
 
-//todo update repos
-router.patch('/', (req, res) => {});
+//todo handle hooks
+router.post('/payload', (req, res) => {
+   controllers.repos.storeRepos(req, res);
+});
+
 module.exports = router;

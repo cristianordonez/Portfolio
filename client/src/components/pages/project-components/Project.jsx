@@ -7,7 +7,6 @@ import OpenInBrowserIcon from '@mui/icons-material/OpenInBrowser';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Project = ({ name, image, description, homepageUrl, githubUrl }) => {
-   console.log('image:', image);
    const getTitleNames = (name) => {
       let lowercaseTitles = name.replaceAll('-', ' ').slice(0, -4).split(' ');
       return lowercaseTitles
@@ -17,7 +16,7 @@ const Project = ({ name, image, description, homepageUrl, githubUrl }) => {
          })
          .join(' ');
    };
-
+   console.log('name:', name);
    let repoTitle = getTitleNames(name);
 
    const imageStyle = {

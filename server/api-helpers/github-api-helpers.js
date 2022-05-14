@@ -25,6 +25,23 @@ let graphQLQuery = {
 }`,
 };
 
+const getSingleRepoQuery = (repoName) => {
+   return {
+      query: `{
+  repositoryOwner (login: "cristianordonez") {
+    repositories {
+      totalCount
+    }
+    repository(name: "${repoName}") {
+      id
+      openGraphImageUrl
+    }
+  }
+}`,
+   };
+};
+
+//gets all repos
 const getReposFromGithub = () => {
    let promise = axios.post(graphQLUrl, graphQLQuery, {
       headers: {
@@ -32,12 +49,26 @@ const getReposFromGithub = () => {
       },
    });
    let promiseData = promise.then((response) => {
-      console.log('response:', response.data.data.search.nodes);
       return response.data.data.search.nodes;
+   });
+   return promiseData;
+};
+
+// gets specific repo image of repo triggered by webhook
+const getSingleRepo = (repoName) => {
+   let query = getSingleRepoQuery(repoName);
+   let promise = axios.post(graphQLUrl, query, {
+      headers: {
+         Authorization: `bearer ${token}`,
+      },
+   });
+   let promiseData = promise.then((response) => {
+      return response.data.data.repositoryOwner.repository;
    });
    return promiseData;
 };
 
 module.exports = {
    getReposFromGithub,
+   getSingleRepo,
 };

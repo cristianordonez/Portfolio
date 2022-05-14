@@ -15,7 +15,7 @@ module.exports = {
             res.send('Error retrieving repos from database.');
          }
       },
-      //fetches repos from github API then saves repos to db
+      //fetches repos from github API to save repos to db
       storeRepos: async function (req, res) {
          try {
             let repos = await githubAPIHelper.getReposFromGithub();
@@ -27,10 +27,25 @@ module.exports = {
             console.error(err);
          }
       },
-      //todo fetches repos from API then updates database
+      //when webhook is received, sends another graphQL query to get data for changed repo image
       updateRepos: async function (req, res) {
          try {
-         } catch (err) {}
+            let repoToUpdate = await githubAPIHelper.getSingleRepo(
+               req.body.repository.name
+            );
+            let requestData = req.body.repository;
+            let repo = {
+               id: repoToUpdate.id,
+               name: requestData.name,
+               openGraphImageUrl: repoToUpdate.openGraphImageUrl,
+               description: requestData.description,
+               homepage: requestData.homepageUrl,
+               url: requestData.url,
+            };
+            let updatedRepo = await models.repos.updateRepo(repo);
+         } catch (err) {
+            console.log('err:', err);
+         }
       },
    },
 };
