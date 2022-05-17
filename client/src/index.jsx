@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App.jsx';
-import LandingPage from './components/pages/LandingPage.jsx';
+import LandingPage from './components/landing-page/LandingPage.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const { palette } = createTheme();
@@ -17,16 +17,16 @@ const theme = createTheme({
    palette: {
       type: 'light',
       primary: {
-         main: '#081426',
+         main: '#06101e',
       },
       secondary: {
          main: '#A3FCFA',
       },
       neutral: {
-         main: '#3D919F',
+         main: '#a3fcfa',
       },
       contrast: {
-         main: '#F07C41',
+         main: '#f07c41',
       },
       background: {
          default: '#2A2A2A',
@@ -34,9 +34,10 @@ const theme = createTheme({
       },
       text: {
          primary: '#ffffff',
-         secondary: '#ffe2fe',
+         secondary: '#FFFFFF',
       },
       divider: '#4E5558',
+      textfield: '#1A2027',
    },
    typography: {
       fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',

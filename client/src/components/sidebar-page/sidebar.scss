@@ -1,0 +1,30 @@
+@use '../App.scss' as *;
+
+img {
+   @include set-size(10rem, 10rem);
+}
+
+.sidebar-list {
+   @include set-size(100%);
+   // display: flex;
+   // flex-direction: column;
+   @include set-flex(flex, center, flex-end);
+   flex-direction: column;
+   .sidebar-list-divider {
+      width: 100%;
+   }
+   .sidebar-list-item {
+      @include set-flex;
+      box-sizing: border-box;
+      padding: 10px 0;
+   }
+}
+
+.sidebar-icons {
+   @include set-flex;
+   @include set-size(100%, auto);
+}
+
+.active {
+   color: $secondary-color;
+}

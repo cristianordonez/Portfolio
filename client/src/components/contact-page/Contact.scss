@@ -1,0 +1,15 @@
+@use '../App.scss' as *;
+
+.contact-text {
+   padding: 10px;
+}
+
+.contact-form-textfield {
+   background-color: #1a2027;
+   margin: 5px;
+   box-sizing: border-box;
+}
+
+.contact-form-button {
+   margin: 5px;
+}

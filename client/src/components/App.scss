@@ -1,0 +1,19 @@
+@use 'sass:color';
+$primary-color: #06101e;
+$secondary-color: #a3fcfa;
+$high-contrast-color: #f07c41;
+$secondary-contrast-color: #3d919f;
+$lightest-color: #c7eef5;
+
+//sets width and height
+@mixin set-size($height, $width: $height) {
+   height: $height;
+   width: $width;
+}
+
+//sets display as flex and centers children as default
+@mixin set-flex($display: flex, $justifyContent: center, $align-items: center) {
+   display: $display;
+   justify-content: $justifyContent;
+   align-items: $align-items;
+}

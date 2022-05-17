@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Sidebar from './pages/Sidebar.jsx';
+import Sidebar from './sidebar-page/Sidebar.jsx';
 import * as Scroll from 'react-scroll';
 
 import {
@@ -16,12 +16,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import axios from 'axios';
 
 // import { Routes, Route, Link } from 'react-router-dom';
-const Home = React.lazy(() => import('./pages/Home.jsx'));
-const MySkills = React.lazy(() => import('./pages/MySkills.jsx'));
+const Home = React.lazy(() => import('./home-page/Home.jsx'));
+// const MySkills = React.lazy(() => import('./skills-page/MySkills.jsx'));
 const ProjectList = React.lazy(() =>
-   import('./pages/project-components/ProjectList.jsx')
+   import('./project-page/project-list/ProjectList.jsx')
 );
-const Contact = React.lazy(() => import('./pages/Contact.jsx'));
+const Contact = React.lazy(() => import('./contact-page/Contact.jsx'));
 
 const App = () => {
    const [repos, setRepos] = useState([]);
@@ -58,11 +58,6 @@ const App = () => {
             <Element style={pageContentStyle} id='home'>
                <React.Suspense fallback={'Loading...'}>
                   <Home />
-               </React.Suspense>
-            </Element>
-            <Element style={pageContentStyle} id='myskills'>
-               <React.Suspense fallback={'Loading...'}>
-                  <MySkills />
                </React.Suspense>
             </Element>
             <Element style={pageContentStyle} id='projects'>
