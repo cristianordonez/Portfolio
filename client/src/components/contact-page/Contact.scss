@@ -1,15 +1,32 @@
 @use '../App.scss' as *;
 
-.contact-text {
-   padding: 10px;
+.contact-container {
+   padding-top: 50%;
 }
 
-.contact-form-textfield {
-   background-color: #1a2027;
-   margin: 5px;
-   box-sizing: border-box;
+#rocket {
+   transform: translateX(-100rem);
+   // animation: launch 5s infinite;
 }
 
-.contact-form-button {
-   margin: 5px;
+@keyframes launch {
+   0% {
+      transform: translateX(-100em);
+   }
+   100% {
+      transform: translateX(100em);
+   }
+}
+
+.contact-inner-container {
+   @include set-flex();
+   flex-wrap: wrap;
+   .contact-form-textfield {
+      background-color: #1a2027;
+      margin: 5px;
+      box-sizing: border-box;
+   }
+   .contact-form-button {
+      margin: 5px;
+   }
 }

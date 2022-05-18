@@ -25,53 +25,60 @@ const Contact = () => {
    };
    return (
       <div className='contact-container'>
-         <Typography variant='h1'>Contact Me</Typography>
-         <form onSubmit={handleSubmit}>
-            <TextField
-               InputProps={{ className: 'contact-form-textfield' }}
-               fullWidth
-               required
-               placeholder='Name'
-               value={name}
-               onChange={(e) => setName(e.target.value)}
-            />
-            <TextField
-               InputProps={{ className: 'contact-form-textfield' }}
-               fullWidth
-               required
-               type='email'
-               placeholder='Email'
-               value={email}
-               onChange={(e) => setEmail(e.target.value)}
-            />
-            <TextField
-               InputProps={{ className: 'contact-form-textfield' }}
-               fullWidth
-               required
-               placeholder='Subject'
-               value={subject}
-               onChange={(e) => setSubject(e.target.value)}
-            />
-            <TextField
-               InputProps={{ className: 'contact-form-textfield' }}
-               fullWidth
-               required
-               placeholder='Message'
-               multiline
-               rows={4}
-               value={message}
-               onChange={(e) => setMessage(e.target.value)}
-            />
-            <Button
-               fullWidth
-               className='contact-form-button'
-               color='secondary'
-               type='submit'
-               variant='contained'
-            >
-               Send Message
-            </Button>
-         </form>
+         <Typography align='center' variant='h1'>
+            Contact Me
+         </Typography>
+         <div className='contact-inner-container'>
+            <form className='contact-form' onSubmit={handleSubmit}>
+               <TextField
+                  InputProps={{ className: 'contact-form-textfield' }}
+                  fullWidth
+                  required
+                  placeholder='Name'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+               />
+               <TextField
+                  InputProps={{ className: 'contact-form-textfield' }}
+                  fullWidth
+                  required
+                  type='email'
+                  placeholder='Email'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+               />
+               <TextField
+                  InputProps={{ className: 'contact-form-textfield' }}
+                  fullWidth
+                  required
+                  placeholder='Subject'
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+               />
+               <TextField
+                  InputProps={{ className: 'contact-form-textfield' }}
+                  fullWidth
+                  required
+                  placeholder='Message'
+                  multiline
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+               />
+               <Button
+                  fullWidth
+                  className='contact-form-button'
+                  color='secondary'
+                  type='submit'
+                  variant='contained'
+               >
+                  Send Message
+               </Button>
+            </form>
+            <div>
+               <Rocket />
+            </div>
+         </div>
       </div>
    );
 };

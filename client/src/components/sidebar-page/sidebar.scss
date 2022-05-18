@@ -17,14 +17,17 @@ img {
       @include set-flex;
       box-sizing: border-box;
       padding: 10px 0;
+      .sidebar-link {
+         color: #e8e6e3;
+         cursor: pointer;
+      }
+      .active {
+         color: $secondary-color;
+      }
    }
 }
 
 .sidebar-icons {
    @include set-flex;
    @include set-size(100%, auto);
-}
-
-.active {
-   color: $secondary-color;
 }

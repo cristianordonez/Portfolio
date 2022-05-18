@@ -24,6 +24,14 @@ const drawerWidth = 160;
 
 const Sidebar = () => {
    const [isHovered, setIsHovered] = useState(false);
+
+   const handleClick = (e) => {
+      console.log('e.target:', e.target);
+      scroller.scrollTo(e.target.value, {
+         duration: 500,
+         smooth: true,
+      });
+   };
    return (
       <Drawer
          sx={{
@@ -47,16 +55,19 @@ const Sidebar = () => {
                      onMouseOut={() => setIsHovered(false)}
                      divider={true}
                      className='sidebar-list-item'
-                     button
+                     // button
                      key={index}
+                     onClick={handleClick}
+                     value={text}
                   >
                      <Link
                         activeClass='active'
+                        className='sidebar-link'
                         to={text}
                         spy={true}
                         smooth={true}
-                        offset={-70}
-                        duration={500}
+                        offset={0}
+                        duration={750}
                      >
                         {text.charAt(0).toUpperCase() + text.slice(1)}
                      </Link>
