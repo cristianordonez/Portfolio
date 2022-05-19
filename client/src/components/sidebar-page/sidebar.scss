@@ -8,13 +8,14 @@ img {
    @include set-size(100%);
    // display: flex;
    // flex-direction: column;
-   @include set-flex(flex, center, flex-end);
+   @include flex-center-vert();
+   justify-content: flex-end;
    flex-direction: column;
    .sidebar-list-divider {
       width: 100%;
    }
    .sidebar-list-item {
-      @include set-flex;
+      @include flex-center;
       box-sizing: border-box;
       padding: 10px 0;
       .sidebar-link {
@@ -28,6 +29,6 @@ img {
 }
 
 .sidebar-icons {
-   @include set-flex;
+   @include flex-center;
    @include set-size(100%, auto);
 }

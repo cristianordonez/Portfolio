@@ -6,14 +6,60 @@ $secondary-contrast-color: #3d919f;
 $lightest-color: #c7eef5;
 
 //sets width and height
-@mixin set-size($height, $width: $height) {
+@mixin set-size($height, $width: $height, $box-sizing: border-box) {
    height: $height;
    width: $width;
+   box-sizing: $box-sizing;
 }
 
-//sets display as flex and centers children as default
-@mixin set-flex($display: flex, $justifyContent: center, $align-items: center) {
-   display: $display;
-   justify-content: $justifyContent;
-   align-items: $align-items;
+@mixin flex-column {
+   display: flex;
+   flex-direction: column;
+}
+
+@mixin flex-center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@mixin flex-center-column {
+   @include flex-center;
+   flex-direction: column;
+}
+
+@mixin flex-center-vert {
+   display: flex;
+   align-items: center;
+}
+
+@mixin flex-center-horiz {
+   display: flex;
+   justify-content: center;
+}
+
+@mixin vertical-center {
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+@mixin cover-background {
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+.app {
+   min-height: 100%;
+   min-width: 100%;
+   background-color: $primary-color;
+   overflow: hidden;
+   .app-main-content {
+      @include set-size(100%);
+      padding-left: 160px;
+      .app-main-content-page-content {
+         min-height: 100vh;
+      }
+   }
 }

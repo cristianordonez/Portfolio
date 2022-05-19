@@ -10,6 +10,7 @@
       @include set-size(auto, 100%);
    }
    .project-list-item-description {
-      @include set-flex(flex, space-between, center);
+      @include flex-center-horiz();
+      align-items: space-between;
    }
 }

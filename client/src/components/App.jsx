@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from './sidebar-page/Sidebar.jsx';
 import * as Scroll from 'react-scroll';
-
+import Rocket from './contact-page/rocket-svg/Rocket.jsx';
 import {
    Link,
    Button,
@@ -15,9 +15,7 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import axios from 'axios';
 
-// import { Routes, Route, Link } from 'react-router-dom';
 const Home = React.lazy(() => import('./home-page/Home.jsx'));
-// const MySkills = React.lazy(() => import('./skills-page/MySkills.jsx'));
 const ProjectList = React.lazy(() =>
    import('./project-page/project-list/ProjectList.jsx')
 );
@@ -37,35 +35,22 @@ const App = () => {
          });
    }, []);
 
-   const rootStyle = {
-      minHeight: '100%',
-      minWidth: '100%',
-      backgroundColor: '#081426',
-   };
-   const mainContentStyle = {
-      paddingLeft: '30%',
-      paddingRight: '20%',
-   };
-   const pageContentStyle = {
-      minHeight: '100vh',
-   };
-
    return (
-      <div style={rootStyle}>
+      <div className='app'>
          <CssBaseline />
          <Sidebar />
-         <Box style={mainContentStyle}>
-            <Element style={pageContentStyle} id='home'>
+         <Box className='app-main-content'>
+            <Element className='app-main-content-page-content' id='home'>
                <React.Suspense fallback={'Loading...'}>
                   <Home />
                </React.Suspense>
             </Element>
-            <Element style={pageContentStyle} id='projects'>
+            <Element className='app-main-content-page-content' id='projects'>
                <React.Suspense fallback={'Loading...'}>
                   <ProjectList repos={repos} />
                </React.Suspense>
             </Element>
-            <Element style={pageContentStyle} id='contact'>
+            <Element className='app-main-content-page-content' id='contact'>
                <React.Suspense fallback={'Loading...'}>
                   <Contact />
                </React.Suspense>

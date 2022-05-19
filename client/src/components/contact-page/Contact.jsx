@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import './Contact.scss';
 import TextField from '@mui/material/TextField';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import Rocket from './rocket-svg/Rocket.jsx';
 import axios from 'axios';
@@ -11,17 +13,34 @@ const Contact = () => {
    const [email, setEmail] = useState('');
    const [subject, setSubject] = useState('');
    const [message, setMessage] = useState('');
-
+   const [beginAnimation, setBeginAnimation] = useState(false);
+   const [open, setOpen] = useState(false);
+   const [openError, setOpenError] = useState(false);
+   //handles sending email from server using nodemailer
    const handleSubmit = (e) => {
+      setBeginAnimation(true);
       e.preventDefault();
       let requestData = { name, email, subject, message };
       let promise = axios.post('/api/contact', requestData);
       promise.then((response) => {
-         console.log('response:', response);
+         setOpenError(false);
+         setOpen(true);
+         setName('');
+         setEmail('');
+         setSubject('');
+         setMessage('');
+         setTimeout(() => {
+            setBeginAnimation(false);
+         }, '3000');
       });
       promise.catch((error) => {
+         setOpenError(true);
          console.log('error:', error);
       });
+   };
+   const handleClose = () => {
+      setOpen(false);
+      setOpenError(false);
    };
    return (
       <div className='contact-container'>
@@ -75,10 +94,30 @@ const Contact = () => {
                   Send Message
                </Button>
             </form>
-            <div>
-               <Rocket />
-            </div>
          </div>
+         {beginAnimation && <Rocket />}
+         <Snackbar
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            onClose={handleClose}
+            open={open}
+            autoHideDuration={5000}
+         >
+            <Alert onClose={handleClose} severity='success'>
+               Your message has been sent! I will get back to you as soon as
+               possible.
+            </Alert>
+         </Snackbar>
+         <Snackbar
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            onClose={handleClose}
+            open={openError}
+            autoHideDuration={5000}
+         >
+            <Alert onClose={handleClose} severity='error'>
+               Your message has been sent! I will get back to you as soon as
+               possible.
+            </Alert>
+         </Snackbar>
       </div>
    );
 };

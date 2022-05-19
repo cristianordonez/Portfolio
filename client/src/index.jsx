@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './Index.scss';
 import App from './components/App.jsx';
 import LandingPage from './components/landing-page/LandingPage.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

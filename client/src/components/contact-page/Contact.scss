@@ -1,26 +1,18 @@
 @use '../App.scss' as *;
 
 .contact-container {
-   padding-top: 50%;
-}
-
-#rocket {
-   transform: translateX(-100rem);
-   // animation: launch 5s infinite;
-}
-
-@keyframes launch {
-   0% {
-      transform: translateX(-100em);
-   }
-   100% {
-      transform: translateX(100em);
-   }
+   @include set-size(100vh, 100%);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   overflow: visible;
 }
 
 .contact-inner-container {
-   @include set-flex();
+   @include flex-center();
    flex-wrap: wrap;
+   margin: 0 20%;
    .contact-form-textfield {
       background-color: #1a2027;
       margin: 5px;
