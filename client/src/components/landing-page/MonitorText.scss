@@ -1,15 +1,15 @@
 #monitor-text > path {
    //  stroke-width: 0%;
    //  stroke-dashoffset: 100px;
-   animation: type 1s ease-in-out forwards;
+   animation: type 0.2s linear forwards;
    opacity: 0;
    //  animation-fill-mode: forwards;
 }
 
-@for $i from 1 to 120 {
+@for $i from 1 to 115 {
    #monitor-text > path {
       &:nth-child(#{$i}) {
-         animation-delay: $i * (calc(15s / 120));
+         animation-delay: $i * (calc(15s / 115));
       }
    }
 }
