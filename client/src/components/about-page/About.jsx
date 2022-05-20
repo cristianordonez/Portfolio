@@ -1,8 +1,8 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import './Home.scss';
+import './About.scss';
 
-const Home = () => {
+const About = () => {
    return (
       <div className='home-container' sx={{ paddingTop: '20em' }}>
          <Typography className='home-item' variant='subtitle1'>
@@ -31,4 +31,4 @@ const Home = () => {
    );
 };
 
-export default Home;
+export default About;
