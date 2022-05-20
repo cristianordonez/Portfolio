@@ -65,14 +65,6 @@ const theme = createTheme({
    },
 });
 
-const colors = {
-   mainBackground: '#081426',
-   secondary: '#60FFD9',
-   middle: '#939196',
-   lighter: '#A3FCFA',
-   lightest: '#FEE1FD',
-};
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
