@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './Index.scss';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import { AnimatePresence } from 'framer-motion';
+
 import App from './components/App.jsx';
 import LandingPage from './components/landing-page/LandingPage.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import './Index.scss';
+
 const { palette } = createTheme();
 const { augmentColor } = palette;
 const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
@@ -70,10 +74,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <BrowserRouter>
       <ThemeProvider theme={theme}>
-         <Routes>
-            <Route path='/' element={<LandingPage />}></Route>
-            <Route path='/home' element={<App />}></Route>
-         </Routes>
+         <AnimatePresence>
+            <Routes>
+               <Route path='/' element={<LandingPage />}></Route>
+               <Route path='/home' element={<App />}></Route>
+            </Routes>
+         </AnimatePresence>
       </ThemeProvider>
    </BrowserRouter>
 );

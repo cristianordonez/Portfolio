@@ -9,7 +9,7 @@
 @for $i from 1 to 115 {
    #monitor-text > path {
       &:nth-child(#{$i}) {
-         animation-delay: $i * (calc(15s / 115));
+         animation-delay: $i * (calc(10s / 115));
       }
    }
 }
