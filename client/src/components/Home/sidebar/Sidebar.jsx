@@ -7,6 +7,9 @@ import ListItem from '@mui/material/ListItem';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+
+import { motion, useReducedMotion } from 'framer-motion';
+
 import Logo from './logo.svg';
 import * as Scroll from 'react-scroll';
 import {
@@ -34,15 +37,15 @@ const Sidebar = () => {
    };
    return (
       <Drawer
+         variant='permanent'
          sx={{
             width: drawerWidth,
             flexShrink: 0,
-            '& .MuiDrawer-paper': {
+            [`& .MuiDrawer-paper`]: {
                width: drawerWidth,
                boxSizing: 'border-box',
             },
          }}
-         variant='permanent'
          anchor='left'
       >
          <img src={Logo}></img>

@@ -3,7 +3,8 @@ import './ProjectList.scss';
 import ProjectListItem from '../project-list-item/ProjectListItem.jsx';
 import Typography from '@mui/material/Typography';
 
-const ProjectList = ({ repos }) => {
+const ProjectList = ({ repos, y }) => {
+   console.log('y:', y);
    return (
       <div className='project-list'>
          <Typography variant='h1'>Projects</Typography>

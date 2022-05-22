@@ -1,11 +1,9 @@
-@use 'sass:color';
 $primary-color: #06101e;
 $secondary-color: #a3fcfa;
 $high-contrast-color: #f07c41;
 $secondary-contrast-color: #3d919f;
 $lightest-color: #c7eef5;
 
-//sets width and height
 @mixin set-size($height, $width: $height, $box-sizing: border-box) {
    height: $height;
    width: $width;
@@ -48,4 +46,11 @@ $lightest-color: #c7eef5;
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
+}
+
+.app {
+   min-height: 100%;
+   min-width: 100%;
+   background-color: $primary-color;
+   overflow: hidden;
 }

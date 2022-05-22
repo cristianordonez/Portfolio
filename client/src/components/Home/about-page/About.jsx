@@ -4,24 +4,24 @@ import './About.scss';
 
 const About = () => {
    return (
-      <div className='home-container' sx={{ paddingTop: '20em' }}>
-         <Typography className='home-item' variant='subtitle1'>
+      <div className='about-container'>
+         <Typography className='about-item' variant='subtitle1'>
             Hi, my name is
          </Typography>
-         <Typography className='home-item' variant='h1'>
+         <Typography className='about-item' variant='h1'>
             Cristian Ordoñez.
          </Typography>
-         <Typography className='home-item' variant='body1'>
+         <Typography className='about-item' variant='body1'>
             I'm a Licensed Registered Dietitian transitioning into a world of
             tech.
          </Typography>
-         <Typography className='home-item' variant='body1'>
+         <Typography className='about-item' variant='body1'>
             During my experience in healthcare I specialized in working with
             individuals in a low socioeconomic status, a population that
             struggles with healthcare disparities such as lower access to and
             use of care.
          </Typography>
-         <Typography className='home-item' variant='body1'>
+         <Typography className='about-item' variant='body1'>
             Therefore I sought to use technology to help people manage their
             symptoms and improve their overall quality of life. This allowed me
             to see the importance of maintaining a smooth, easy to navigate user
