@@ -1,10 +1,15 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import './About.scss';
+import { motion } from 'framer-motion';
 
 const About = () => {
    return (
-      <div className='about-container'>
+      <motion.div
+         className='about-container'
+         initial={{ x: '50vw' }}
+         animate={{ x: 0 }}
+      >
          <Typography className='about-item' variant='subtitle1'>
             Hi, my name is
          </Typography>
@@ -12,8 +17,7 @@ const About = () => {
             Cristian Ordoñez.
          </Typography>
          <Typography className='about-item' variant='body1'>
-            I'm a Licensed Registered Dietitian transitioning into a world of
-            tech.
+            I'm a Registered Dietitian transitioning into a world of tech.
          </Typography>
          <Typography className='about-item' variant='body1'>
             During my experience in healthcare I specialized in working with
@@ -27,7 +31,7 @@ const About = () => {
             to see the importance of maintaining a smooth, easy to navigate user
             experience that is accessible to all people.
          </Typography>
-      </div>
+      </motion.div>
    );
 };
 

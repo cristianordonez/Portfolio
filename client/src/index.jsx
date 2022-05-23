@@ -17,37 +17,39 @@ const theme = createTheme({
    palette: {
       type: 'light',
       primary: {
-         main: '#06101e',
+         main: '#0a1929',
       },
       secondary: {
-         main: '#A3FCFA',
+         main: '#a1e8cc',
       },
       neutral: {
-         main: '#a3fcfa',
+         main: '#d5e0ea',
       },
       contrast: {
-         main: '#f07c41',
+         main: '#a1e8cc',
       },
       background: {
          default: '#2A2A2A',
-         paper: '#081426',
+         paper: '#0a1929',
       },
       text: {
-         primary: '#ffffff',
-         secondary: '#FFFFFF',
+         primary: '#d5e0ea',
+         secondary: '#d5e0ea',
       },
       divider: '#4E5558',
-      textfield: '#1A2027',
+      textfield: '#d5e0ea',
    },
    typography: {
-      fontFamily: '"Open Sans", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Josefin Sans", "Helvetica", "Arial", sans-serif',
       h1: {
          fontSize: '5rem',
          fontWeight: 500,
          fontFamily: '"Josefin Sans", "Helvetica", "Arial", sans-serif',
+         color: '#F3C969',
       },
       h2: {
          fontSize: '2.5rem',
+         color: '#5dfdcb',
       },
       h3: {
          fontSize: '2.2rem',
@@ -56,10 +58,12 @@ const theme = createTheme({
          fontSize: '2rem',
       },
       body1: {
-         fontSize: '1.1rem',
+         fontSize: '1.3rem',
+         color: '#d5e0ea',
       },
       subtitle1: {
-         color: '#A3FCFA',
+         fontSize: '1.2rem',
+         color: '#5dfdcb',
       },
    },
 });

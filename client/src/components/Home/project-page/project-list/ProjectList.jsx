@@ -2,9 +2,9 @@ import React from 'react';
 import './ProjectList.scss';
 import ProjectListItem from '../project-list-item/ProjectListItem.jsx';
 import Typography from '@mui/material/Typography';
+import { motion } from 'framer-motion';
 
-const ProjectList = ({ repos, y }) => {
-   console.log('y:', y);
+const ProjectList = ({ repos }) => {
    return (
       <div className='project-list'>
          <Typography variant='h1'>Projects</Typography>

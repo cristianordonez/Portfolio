@@ -2,6 +2,7 @@
 
 img {
    @include set-size(10rem, 10rem);
+   cursor: pointer;
 }
 
 .sidebar-list {
@@ -17,11 +18,11 @@ img {
       box-sizing: border-box;
       padding: 10px 0;
       .sidebar-link {
-         color: #e8e6e3;
+         color: $text-color;
          cursor: pointer;
       }
       .active {
-         color: $secondary-color;
+         color: $high-contrast-color;
       }
    }
 }

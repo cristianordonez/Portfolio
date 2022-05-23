@@ -25,7 +25,7 @@ const App = () => {
       initial: { opacity: 0, scale: 0.8 },
       animate: { opacity: 1, scale: 1 },
       exit: { opacity: 0, scale: 0.5 },
-      transition: { easeInOut: [0.17, 0.67, 0.83, 0.67] },
+      transition: { linear: [0.17, 0.67, 0.83, 0.67] },
    };
    return (
       <AnimatePresence className='app' exitBeforeEnter>

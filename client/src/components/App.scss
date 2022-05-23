@@ -1,8 +1,9 @@
-$primary-color: #06101e;
-$secondary-color: #a3fcfa;
-$high-contrast-color: #f07c41;
-$secondary-contrast-color: #3d919f;
-$lightest-color: #c7eef5;
+$primary-color: #0a1929;
+$secondary-color: #a1e8cc;
+$high-contrast-color: #5dfdcb;
+$secondary-contrast-color: #d5e0ea;
+$alternate-color: #f3c969;
+$text-color: #d5e0ea;
 
 @mixin set-size($height, $width: $height, $box-sizing: border-box) {
    height: $height;

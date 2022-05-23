@@ -17,8 +17,8 @@ import Sidebar from './sidebar/Sidebar.jsx';
 const Home = () => {
    const [repos, setRepos] = useState([]);
    const containerVariant = {
-      initial: { opacity: 0, scale: 0.5 },
-      animate: { opacity: 1, scale: 1 },
+      initial: { opacity: 1, scale: 0.5 },
+      animate: { opacity: 1, scale: 2 },
       exit: { opacity: 0, scale: 0.5 },
       transition: { easeInOut: [0.17, 0.67, 0.83, 0.67] },
    };
@@ -34,17 +34,11 @@ const Home = () => {
    }, []);
 
    return (
-      <motion.div
-         className='home'
-         variant={containerVariant}
-         initial='initial'
-         animate='animate'
-         exit='exit'
-      >
+      <motion.div className='home'>
          <div className='home-main-content'>
             <CssBaseline />
             <Sidebar />
-            <Element className='home-page-content' id='home'>
+            <Element className='home-page-content' id='about'>
                <React.Suspense fallback={'Loading...'}>
                   <About />
                </React.Suspense>
