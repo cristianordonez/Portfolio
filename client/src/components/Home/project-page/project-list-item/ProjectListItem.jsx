@@ -30,7 +30,7 @@ const ProjectListItem = ({
          <Typography align='center' variant='h3'>
             {repoTitle}
          </Typography>
-         <img src={image}></img>
+         <img src={image} alt={name} loading='lazy'></img>
          <div className='project-list-item-description'>
             <Typography align='left' variant='body1'>
                {description}

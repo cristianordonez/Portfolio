@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1653697076578" clover="3.2.0">
+  <project timestamp="1653697076578" name="All files">
+    <metrics statements="51" coveredstatements="39" conditionals="2" coveredconditionals="2" methods="18" coveredmethods="14" elements="71" coveredelements="55" complexity="0" loc="51" ncloc="51" packages="8" files="9" classes="9"/>
+    <package name="about-page">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="About.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/about-page/About.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="contact-page">
+      <metrics statements="33" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="6"/>
+      <file name="Contact.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/contact-page/Contact.jsx">
+        <metrics statements="33" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="10" coveredmethods="6"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="59" type="stmt"/>
+        <line num="13" count="59" type="stmt"/>
+        <line num="14" count="59" type="stmt"/>
+        <line num="15" count="59" type="stmt"/>
+        <line num="16" count="59" type="stmt"/>
+        <line num="17" count="59" type="stmt"/>
+        <line num="18" count="59" type="stmt"/>
+        <line num="20" count="59" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="41" count="59" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="59" type="stmt"/>
+        <line num="58" count="8" type="stmt"/>
+        <line num="67" count="14" type="stmt"/>
+        <line num="75" count="12" type="stmt"/>
+        <line num="85" count="22" type="stmt"/>
+      </file>
+    </package>
+    <package name="contact-page.rocket-svg">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Rocket.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/contact-page/rocket-svg/Rocket.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="landing-page">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="LandingPage.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/landing-page/LandingPage.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="landing-page.landing-page-birds">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="Bird1.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/landing-page/landing-page-birds/Bird1.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+      <file name="Bird2.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/landing-page/landing-page-birds/Bird2.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="landing-page.landing-page-lamp">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Lamp.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/landing-page/landing-page-lamp/Lamp.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="landing-page.landing-page-monitor">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="MonitorText.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/landing-page/landing-page-monitor/MonitorText.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="landing-page.landing-page-mug">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Mug.jsx" path="/Users/cristianordonez/Workspace/final-projects/webpack-projects/ePortfolio/client/src/components/Home/landing-page/landing-page-mug/Mug.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

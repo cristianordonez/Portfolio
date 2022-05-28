@@ -27,6 +27,12 @@ img {
    }
 }
 
+div.home-btn {
+   // padding-left: 15px;
+   @include flex-center();
+   padding-top: 1rem;
+}
+
 .sidebar-icons {
    @include flex-center;
    @include set-size(100%, auto);

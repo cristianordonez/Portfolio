@@ -7,6 +7,7 @@ const About = () => {
    return (
       <motion.div
          className='about-container'
+         data-testid='about-container'
          initial={{ x: '50vw' }}
          animate={{ x: 0 }}
       >

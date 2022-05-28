@@ -48,7 +48,7 @@ const theme = createTheme({
          color: '#F3C969',
       },
       h2: {
-         fontSize: '2.5rem',
+         fontSize: '4rem',
          color: '#5dfdcb',
       },
       h3: {

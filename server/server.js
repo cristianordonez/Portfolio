@@ -46,6 +46,7 @@ let transporter = nodemailer.createTransport({
 
 //handles post requests to contact form
 app.post('/contact', (req, res) => {
+   console.log('req.body:', req.body);
    let mailOptions = {
       from: req.body.name,
       to: config.EMAIL_USERNAME, //receiving address
@@ -54,6 +55,7 @@ app.post('/contact', (req, res) => {
    };
    transporter.sendMail(mailOptions, (err, data) => {
       if (err) {
+         console.log('err:', err);
          res.status(400).send('Unable to send message.');
       } else {
          res.status(201).send('Email has been sent');

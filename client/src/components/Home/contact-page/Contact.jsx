@@ -43,8 +43,8 @@ const Contact = () => {
       setOpenError(false);
    };
    return (
-      <div className='contact-container'>
-         <Typography align='center' variant='h1'>
+      <div className='contact-container' data-testid='contact-container'>
+         <Typography align='center' variant='h2'>
             Contact Me
          </Typography>
          <div className='contact-inner-container'>
@@ -87,6 +87,7 @@ const Contact = () => {
                <Button
                   fullWidth
                   className='contact-form-button'
+                  data-testid='submit-form-btn'
                   color='secondary'
                   type='submit'
                   variant='contained'

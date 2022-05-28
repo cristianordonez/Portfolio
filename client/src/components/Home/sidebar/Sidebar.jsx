@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Home from '@mui/icons-material/Home';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 
@@ -26,12 +27,13 @@ import {
 
 const drawerWidth = 160;
 
-const Sidebar = () => {
+const Sidebar = ({ handleScrollClick }) => {
    const [isHovered, setIsHovered] = useState(false);
    let navigate = useNavigate();
 
    const handleClick = (e) => {
       console.log('e.target:', e.target);
+      handleScrollClick();
       scroller.scrollTo(e.target.value, {
          duration: 500,
          smooth: true,
@@ -87,6 +89,15 @@ const Sidebar = () => {
                   </React.Fragment>
                ))}
             </List>
+            <div className='home-btn'>
+               <Button
+                  color='contrast'
+                  variant='outlined'
+                  onClick={handleHomePage}
+               >
+                  <HomeIcon />
+               </Button>
+            </div>
 
             <div className='sidebar-icons'>
                <IconButton
