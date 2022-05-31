@@ -27,7 +27,7 @@ import {
 
 const drawerWidth = 160;
 
-const Sidebar = ({ handleScrollClick }) => {
+const Sidebar = () => {
    const [isHovered, setIsHovered] = useState(false);
    let navigate = useNavigate();
 
@@ -56,6 +56,7 @@ const Sidebar = ({ handleScrollClick }) => {
                },
             }}
             anchor='left'
+            data-testid='sidebar'
          >
             <img src={Logo} onClick={handleHomePage}></img>
 

@@ -48,11 +48,12 @@ const theme = createTheme({
          color: '#F3C969',
       },
       h2: {
-         fontSize: '4rem',
+         fontSize: '4.5rem',
          color: '#5dfdcb',
       },
       h3: {
-         fontSize: '2.2rem',
+         color: '#F3C969',
+         fontSize: '4.5vw',
       },
       h4: {
          fontSize: '2rem',
@@ -61,8 +62,12 @@ const theme = createTheme({
          fontSize: '1.3rem',
          color: '#d5e0ea',
       },
+      body2: {
+         fontSize: '1.6vw',
+         color: '#d5e0ea',
+      },
       subtitle1: {
-         fontSize: '1.2rem',
+         fontSize: '1.6vw',
          color: '#5dfdcb',
       },
    },

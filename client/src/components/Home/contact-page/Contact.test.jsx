@@ -1,7 +1,8 @@
 import React from 'react';
 import Contact from './Contact.jsx';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import axiosMock from 'axios';
 import 'regenerator-runtime/runtime';
 
 test('Contact page renders correctly', async () => {
@@ -19,9 +20,8 @@ test('Forms are sent correctly', async () => {
       screen.getByPlaceholderText('Message'),
       'this is a test message'
    );
-   screen.debug();
+
    let button = screen.getByText('Send Message');
-   console.log('button:', button);
    await user.click(button);
-   screen.debug();
+   await waitFor(() => expect(axiosMock.post).toHaveBeenCalled());
 });

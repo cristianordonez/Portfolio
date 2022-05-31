@@ -1,23 +1,28 @@
 @use '../App.scss' as *;
 
 .home {
-   min-height: 100vh;
-   min-width: 100vw;
+   min-height: 100%;
+   min-width: 100%;
+   @include flex-column();
    background-color: $primary-color;
    overflow: hidden;
-}
+   padding: 0 15vw 0 160px;
+   .home-about {
+      min-height: 100vh;
+      padding-left: 5vw;
+      padding-right: 5vw;
+      margin-bottom: 1rem;
+      @include flex-center-vert();
+   }
+   .home-projects {
+      @include set-size(100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+   }
 
-.home-main-content {
-   @include set-size(100%);
-   display: flex;
-   flex-direction: column;
-   padding-left: 160px;
-}
-
-.home-page-content {
-   // @include set-size(100%);
-   padding-right: 25%;
-   padding-left: 15%;
-   // padding: 15% 20% 15% 15%;
-   min-height: 100vh;
+   .home-contact {
+      @include set-size(100%);
+      min-height: 100vh;
+   }
 }

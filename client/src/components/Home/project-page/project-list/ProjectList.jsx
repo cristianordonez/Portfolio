@@ -11,15 +11,16 @@ const ProjectList = () => {
       axios
          .get('/api/repos')
          .then((repos) => {
+            console.log('repos.data:', repos.data);
             setRepos(repos.data);
          })
          .catch((err) => {
             console.log('err.response:', err.response);
          });
    }, []);
-
+   console.log('repos:', repos);
    return (
-      <div className='project-list'>
+      <div className='project-list' data-testid='project-list'>
          <Typography variant='h2'>Projects</Typography>
          {repos.map((repo) => (
             <ProjectListItem

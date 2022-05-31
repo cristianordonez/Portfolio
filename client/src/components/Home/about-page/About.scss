@@ -1,10 +1,11 @@
+@use '../../App.scss' as *;
+
 .about-container {
-   height: 100%;
-   width: 100%;
-   padding-top: 20%;
-   padding-bottom: 15%;
+   @include set-size(100%);
+   @include flex-column();
+   gap: 1rem;
+
    .about-item {
       margin: 0;
-      padding: 10px;
    }
 }

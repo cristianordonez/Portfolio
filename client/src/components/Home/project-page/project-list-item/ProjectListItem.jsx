@@ -26,7 +26,10 @@ const ProjectListItem = ({
    let repoTitle = getTitleNames(name);
 
    return (
-      <div className='project-list-item-container'>
+      <div
+         className='project-list-item-container'
+         data-testid='project-list-item'
+      >
          <Typography align='center' variant='h3'>
             {repoTitle}
          </Typography>

@@ -54,46 +54,33 @@ const Home = () => {
    //    //       console.log('err.response:', err.response);
    //    //    });
    // }, []);
-   const [renderContact, setRenderContact] = useState(false);
-   const handleScrollClick = () => {
-      setRenderContact(true);
-   };
+
    return (
-      <motion.div className='home'>
-         <div className='home-main-content'>
-            <CssBaseline />
-            <Sidebar handleScrollClick={handleScrollClick} />
-            <Element className='home-page-content' id='about'>
-               <About />
-            </Element>
-            <section
-               id='projects'
-               ref={projectSection}
-               className='home-page-content'
-            >
-               {isProjectSectionVisible && (
-                  <Element>
-                     <Suspense fallback={'Loading...'}>
-                        <ProjectList />
-                     </Suspense>
-                  </Element>
-               )}
-            </section>
-            <section
-               id='contact'
-               ref={contactSection}
-               className='home-page-content'
-            >
-               {isContactSectionVisible && (
-                  <Element>
-                     <Suspense fallback={'Loading...'}>
-                        <Contact />
-                     </Suspense>
-                  </Element>
-               )}
-            </section>
-         </div>
-      </motion.div>
+      <div className='home'>
+         <CssBaseline />
+         <Sidebar />
+         <Element className='home-about' id='about'>
+            <About />
+         </Element>
+         <section id='projects' ref={projectSection} className='home-projects'>
+            {isProjectSectionVisible && (
+               <Element>
+                  <Suspense fallback={'Loading...'}>
+                     <ProjectList />
+                  </Suspense>
+               </Element>
+            )}
+         </section>
+         <section id='contact' ref={contactSection} className='home-contact'>
+            {isContactSectionVisible && (
+               <Element>
+                  <Suspense fallback={'Loading...'}>
+                     <Contact />
+                  </Suspense>
+               </Element>
+            )}
+         </section>
+      </div>
    );
 };
 

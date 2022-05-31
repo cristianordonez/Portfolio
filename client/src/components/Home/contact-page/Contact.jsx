@@ -23,6 +23,7 @@ const Contact = () => {
       let requestData = { name, email, subject, message };
       let promise = axios.post('/api/contact', requestData);
       promise.then((response) => {
+         console.log('response:', response);
          setOpenError(false);
          setOpen(true);
          setName('');
