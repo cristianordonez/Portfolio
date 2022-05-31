@@ -15,7 +15,7 @@ img {
    }
    .sidebar-list-item {
       @include flex-center;
-      cursor: pointer;
+      // cursor: pointer;
       box-sizing: border-box;
       padding: 10px 0;
       font-size: 1rem;

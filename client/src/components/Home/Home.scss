@@ -9,7 +9,7 @@
    padding: 0 15vw 0 160px;
    .home-about {
       min-height: 100vh;
-      padding-left: 10vw;
+      padding-left: 12vw;
       padding-right: 2vw;
       margin-bottom: 1rem;
       @include flex-center-vert();
@@ -18,7 +18,7 @@
       @include set-size(100%);
       @include flex-column();
       min-height: 100vh;
-      padding-left: 10vw;
+      padding-left: 12vw;
       padding-right: 2vw;
       padding-top: 1rem;
    }
@@ -26,5 +26,6 @@
    .home-contact {
       @include set-size(100%);
       min-height: 100vh;
+      padding-left: 12vw;
    }
 }

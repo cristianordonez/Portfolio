@@ -7,9 +7,8 @@ import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import Rocket from './rocket-svg/Rocket.jsx';
 import axios from 'axios';
-import { motion } from 'framer-motion';
 
-const Contact = () => {
+const Contact = ({ isVisible }) => {
    const [name, setName] = useState('');
    const [email, setEmail] = useState('');
    const [subject, setSubject] = useState('');
@@ -17,6 +16,7 @@ const Contact = () => {
    const [beginAnimation, setBeginAnimation] = useState(false);
    const [open, setOpen] = useState(false);
    const [openError, setOpenError] = useState(false);
+
    //handles sending email from server using nodemailer
    const handleSubmit = (e) => {
       setBeginAnimation(true);
@@ -24,7 +24,6 @@ const Contact = () => {
       let requestData = { name, email, subject, message };
       let promise = axios.post('/api/contact', requestData);
       promise.then((response) => {
-         console.log('response:', response);
          setOpenError(false);
          setOpen(true);
          setName('');
@@ -37,21 +36,20 @@ const Contact = () => {
       });
       promise.catch((error) => {
          setOpenError(true);
-         console.log('error:', error);
       });
    };
+
    const handleClose = () => {
       setOpen(false);
       setOpenError(false);
    };
+
+   let currentClass = isVisible
+      ? 'contact-container animate-contact'
+      : 'contact-container';
+
    return (
-      <motion.div
-         className='contact-container'
-         data-testid='contact-container'
-         initial={{ y: '150vh' }}
-         animate={{ y: 0 }}
-         transition={{ duration: 1, type: 'spring' }}
-      >
+      <div className={currentClass} data-testid='contact-container'>
          <Typography align='center' variant='h2'>
             Contact Me
          </Typography>
@@ -127,7 +125,7 @@ const Contact = () => {
                possible.
             </Alert>
          </Snackbar>
-      </motion.div>
+      </div>
    );
 };
 

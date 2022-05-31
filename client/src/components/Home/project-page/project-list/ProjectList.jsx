@@ -3,9 +3,8 @@ import axios from 'axios';
 import './ProjectList.scss';
 import ProjectListItem from '../project-list-item/ProjectListItem.jsx';
 import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
 
-const ProjectList = () => {
+const ProjectList = ({ isVisible }) => {
    const [repos, setRepos] = useState([]);
    useEffect(() => {
       axios
@@ -17,14 +16,12 @@ const ProjectList = () => {
             console.log('err.response:', err.response);
          });
    }, []);
+
+   let currentClass = isVisible
+      ? 'animate-projects project-list'
+      : 'project-list';
    return (
-      <motion.div
-         className='project-list'
-         data-testid='project-list'
-         initial={{ y: '150vh' }}
-         animate={{ y: 0 }}
-         transition={{ duration: 1.5, type: 'spring' }}
-      >
+      <div className={currentClass} data-testid='project-list'>
          <Typography className='project-list-title' variant='h2'>
             Projects
          </Typography>
@@ -38,7 +35,7 @@ const ProjectList = () => {
                githubUrl={repo.url}
             />
          ))}
-      </motion.div>
+      </div>
    );
 };
 

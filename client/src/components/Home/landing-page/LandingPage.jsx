@@ -5,7 +5,6 @@ import MonitorText from './landing-page-monitor/MonitorText.jsx';
 import Bird1 from './landing-page-birds/Bird1.jsx';
 import Bird2 from './landing-page-birds/Bird2.jsx';
 import Mug from './landing-page-mug/Mug.jsx';
-import { motion } from 'framer-motion';
 
 const SvgComponent = (props) => {
    const containerVariant = {
@@ -14,13 +13,13 @@ const SvgComponent = (props) => {
       exit: { opacity: 0, scale: 0.5 },
    };
    return (
-      <motion.div initial='initial' animate='animate' exit='exit'>
+      <div initial='initial' animate='animate' exit='exit'>
          <Link
-            to='/home'
+            to='/about'
             className='landing-page-link'
             data-testid='landing-page-link'
          ></Link>
-         <motion.svg
+         <svg
             variants={containerVariant}
             width='100%'
             height='100%'
@@ -4832,8 +4831,8 @@ const SvgComponent = (props) => {
                   />
                </linearGradient>
             </defs>
-         </motion.svg>
-      </motion.div>
+         </svg>
+      </div>
    );
 };
 

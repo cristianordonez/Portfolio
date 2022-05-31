@@ -12,7 +12,6 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Tooltip from '@mui/material/Tooltip';
 import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from 'react-router-dom';
-import { motion, useReducedMotion } from 'framer-motion';
 
 import Logo from './logo.svg';
 import * as Scroll from 'react-scroll';
@@ -29,12 +28,13 @@ import {
 const drawerWidth = 160;
 
 const Sidebar = () => {
-   const [isHovered, setIsHovered] = useState(false);
-   const [isOpen, setIsOpen] = useState(false);
-
+   // const [isHovered, setIsHovered] = useState(false);
+   // const [isOpen, setIsOpen] = useState(false);
+   const [selectedIndex, setSelectedIndex] = useState(1);
    let navigate = useNavigate();
 
-   const handleClick = (e) => {
+   const handleClick = (e, index) => {
+      setSelectedIndex(index);
       let target = e.target.innerHTML;
       if (target === 'Contact') {
          console.log('here');
@@ -46,7 +46,7 @@ const Sidebar = () => {
          });
       } else {
          scroller.scrollTo(e.target.innerHTML.toLowerCase(), {
-            duration: 500,
+            duration: 800,
             smooth: true,
          });
       }
@@ -83,28 +83,22 @@ const Sidebar = () => {
             {['about', 'projects', 'contact'].map((text, index) => (
                <React.Fragment key={index}>
                   <ListItem
-                     // onMouseOver={() => setIsHovered(true)}
-                     // onMouseOut={() => setIsHovered(false)}
+                     selected={true}
                      divider={true}
                      className='sidebar-list-item'
-                     // key={index}
-                     onClick={handleClick}
-                     // value={text.charAt(0).toUpperCase() + text.slice(1)}
                   >
-                     {/* <Link
+                     <Link
                         activeClass='active'
                         className='sidebar-link'
-                        // onSetActive={handleSetActive}
                         to={text}
                         spy={true}
                         smooth={true}
                         isDynamic={true}
                         offset={0}
-                        // delay={1000}
                         duration={750}
-                     > */}
-                     {text.charAt(0).toUpperCase() + text.slice(1)}
-                     {/* </Link> */}
+                     >
+                        {text.charAt(0).toUpperCase() + text.slice(1)}
+                     </Link>
                   </ListItem>
                </React.Fragment>
             ))}
@@ -124,12 +118,14 @@ const Sidebar = () => {
             <IconButton
                target='_blank'
                href='https://www.linkedin.com/in/cristian-ordonez-rd/'
+               data-testid='linkedin button'
             >
                <LinkedInIcon color='secondary' />
             </IconButton>
             <IconButton
                target='_blank'
                href='https://github.com/cristianordonez'
+               data-testid='github button'
             >
                <GitHubIcon color='secondary' />
             </IconButton>

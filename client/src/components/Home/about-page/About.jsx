@@ -1,17 +1,10 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import './About.scss';
-import { motion } from 'framer-motion';
 
 const About = () => {
    return (
-      <motion.div
-         className='about-container'
-         data-testid='about-container'
-         initial={{ y: '150vh' }}
-         animate={{ y: 0 }}
-         transition={{ duration: 1, type: 'spring' }}
-      >
+      <div className='about-container' data-testid='about-container'>
          <Typography className='about-item' variant='subtitle1'>
             Hi, my name is
          </Typography>
@@ -33,7 +26,7 @@ const About = () => {
             to see the importance of maintaining a smooth, easy to navigate user
             experience that is accessible to all people.
          </Typography>
-      </motion.div>
+      </div>
    );
 };
 

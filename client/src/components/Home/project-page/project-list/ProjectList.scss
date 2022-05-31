@@ -4,8 +4,24 @@
    @include flex-column();
    align-items: center;
    justify-content: space-between;
+   opacity: 0;
    gap: 2rem;
    .project-list-title {
       align-self: flex-start;
+   }
+}
+
+.animate-projects {
+   animation: appear 1s linear forwards;
+}
+
+@keyframes appear {
+   0% {
+      opacity: 0;
+      transform: translateX(100%);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0%);
    }
 }

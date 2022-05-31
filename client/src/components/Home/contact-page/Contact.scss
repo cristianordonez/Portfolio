@@ -8,6 +8,7 @@
    align-items: center;
    justify-content: center;
    overflow: hidden;
+   opacity: 0;
 }
 
 .contact-inner-container {
@@ -21,5 +22,20 @@
    }
    .contact-form-button {
       margin: 5px;
+   }
+}
+
+.animate-contact {
+   animation: appear 1s linear forwards;
+}
+
+@keyframes appear {
+   0% {
+      opacity: 0;
+      transform: translateX(100%);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0%);
    }
 }
