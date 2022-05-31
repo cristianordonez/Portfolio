@@ -38,16 +38,18 @@ const ProjectListItem = ({
             <Typography align='left' variant='body1'>
                {description}
             </Typography>
-            <Tooltip title='View live link'>
-               <IconButton target='_blank' href={homepageUrl}>
-                  <OpenInBrowserIcon color='secondary' />
-               </IconButton>
-            </Tooltip>
-            <Tooltip title='Visit Github repo'>
-               <IconButton target='_blank' href={githubUrl}>
-                  <GitHubIcon color='secondary' />
-               </IconButton>
-            </Tooltip>
+            <div className='project-list-icons'>
+               <Tooltip title='View live link'>
+                  <IconButton target='_blank' href={homepageUrl}>
+                     <OpenInBrowserIcon color='secondary' />
+                  </IconButton>
+               </Tooltip>
+               <Tooltip title='Visit Github repo'>
+                  <IconButton target='_blank' href={githubUrl}>
+                     <GitHubIcon color='secondary' />
+                  </IconButton>
+               </Tooltip>
+            </div>
          </div>
       </div>
    );

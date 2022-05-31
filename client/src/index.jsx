@@ -41,34 +41,26 @@ const theme = createTheme({
    },
    typography: {
       fontFamily: '"Josefin Sans", "Helvetica", "Arial", sans-serif',
-      h1: {
-         fontSize: '5rem',
-         fontWeight: 500,
-         fontFamily: '"Josefin Sans", "Helvetica", "Arial", sans-serif',
-         color: '#F3C969',
-      },
       h2: {
-         fontSize: '4.5rem',
-         color: '#5dfdcb',
+         color: '#F3C969',
+         fontSize: '3.5vw',
+         fontWeight: 500,
       },
       h3: {
-         color: '#F3C969',
-         fontSize: '4.5vw',
-      },
-      h4: {
-         fontSize: '2rem',
+         color: '#5dfdcb',
+         fontSize: '3.2vw',
       },
       body1: {
-         fontSize: '1.3rem',
+         fontSize: '1.4vw',
          color: '#d5e0ea',
       },
       body2: {
-         fontSize: '1.6vw',
+         fontSize: '1.2vw',
          color: '#d5e0ea',
       },
       subtitle1: {
          fontSize: '1.6vw',
-         color: '#5dfdcb',
+         color: '#F3C969',
       },
    },
 });

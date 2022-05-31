@@ -10,7 +10,7 @@ const About = () => {
          data-testid='about-container'
          initial={{ y: '150vh' }}
          animate={{ y: 0 }}
-         transition={{ duration: 0.8, type: 'spring' }}
+         transition={{ duration: 1, type: 'spring' }}
       >
          <Typography className='about-item' variant='subtitle1'>
             Hi, my name is

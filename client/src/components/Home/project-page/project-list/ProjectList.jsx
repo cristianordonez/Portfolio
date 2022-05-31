@@ -11,17 +11,23 @@ const ProjectList = () => {
       axios
          .get('/api/repos')
          .then((repos) => {
-            console.log('repos.data:', repos.data);
             setRepos(repos.data);
          })
          .catch((err) => {
             console.log('err.response:', err.response);
          });
    }, []);
-   console.log('repos:', repos);
    return (
-      <div className='project-list' data-testid='project-list'>
-         <Typography variant='h2'>Projects</Typography>
+      <motion.div
+         className='project-list'
+         data-testid='project-list'
+         initial={{ y: '150vh' }}
+         animate={{ y: 0 }}
+         transition={{ duration: 1.5, type: 'spring' }}
+      >
+         <Typography className='project-list-title' variant='h2'>
+            Projects
+         </Typography>
          {repos.map((repo) => (
             <ProjectListItem
                key={repo._id}
@@ -32,7 +38,7 @@ const ProjectList = () => {
                githubUrl={repo.url}
             />
          ))}
-      </div>
+      </motion.div>
    );
 };
 

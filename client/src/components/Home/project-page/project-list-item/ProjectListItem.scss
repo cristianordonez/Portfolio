@@ -1,16 +1,19 @@
 @use '../../../App.scss' as *;
 
 .project-list-item-container {
-   display: flex;
-   flex-direction: column;
+   @include flex-column();
    align-items: center;
-   justify-content: center;
-   margin: 15px 0;
+   // margin: 15px 0;
    img {
       @include set-size(auto, 100%);
    }
    .project-list-item-description {
       @include flex-center-horiz();
-      align-items: space-between;
+      // align-items: space-between;
+      @include set-size(100%);
+      justify-content: space-between;
+   }
+   .project-list-icons {
+      @include flex-center();
    }
 }

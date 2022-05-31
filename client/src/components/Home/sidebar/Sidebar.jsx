@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './sidebar.scss';
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Home from '@mui/icons-material/Home';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Tooltip from '@mui/material/Tooltip';
 import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -29,6 +30,8 @@ const drawerWidth = 160;
 
 const Sidebar = () => {
    const [isHovered, setIsHovered] = useState(false);
+   const [isOpen, setIsOpen] = useState(false);
+
    let navigate = useNavigate();
 
    const handleClick = (e) => {
@@ -42,54 +45,62 @@ const Sidebar = () => {
    const handleHomePage = () => {
       navigate('/');
    };
-
+   const handleOpen = () => {
+      setIsOpen(!isOpen);
+   };
+   useEffect(() => {
+      setTimeout(() => {
+         setIsOpen(true);
+      });
+   }, []);
    return (
-      <motion.div>
-         <Drawer
-            variant='permanent'
-            sx={{
+      <Drawer
+         variant='persistent'
+         // open={isOpen}
+         open={true}
+         transitionDuration={600}
+         sx={{
+            width: drawerWidth,
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: {
                width: drawerWidth,
-               flexShrink: 0,
-               [`& .MuiDrawer-paper`]: {
-                  width: drawerWidth,
-                  boxSizing: 'border-box',
-               },
-            }}
-            anchor='left'
-            data-testid='sidebar'
-         >
-            <img src={Logo} onClick={handleHomePage}></img>
+               boxSizing: 'border-box',
+            },
+         }}
+         anchor='left'
+         data-testid='sidebar'
+      >
+         <img src={Logo} onClick={handleHomePage}></img>
+         <List className='sidebar-list'>
+            <Divider className='sidebar-list-divider' />
 
-            <List className='sidebar-list'>
-               <Divider className='sidebar-list-divider' />
-
-               {['about', 'projects', 'contact'].map((text, index) => (
-                  <React.Fragment key={index}>
-                     <ListItem
-                        onMouseOver={() => setIsHovered(true)}
-                        onMouseOut={() => setIsHovered(false)}
-                        divider={true}
-                        className='sidebar-list-item'
-                        // button
-                        key={index}
-                        onClick={handleClick}
-                        value={text}
+            {['about', 'projects', 'contact'].map((text, index) => (
+               <React.Fragment key={index}>
+                  <ListItem
+                     onMouseOver={() => setIsHovered(true)}
+                     onMouseOut={() => setIsHovered(false)}
+                     divider={true}
+                     className='sidebar-list-item'
+                     key={index}
+                     onClick={handleClick}
+                     value={text}
+                  >
+                     <Link
+                        activeClass='active'
+                        className='sidebar-link'
+                        to={text}
+                        spy={true}
+                        smooth={true}
+                        offset={0}
+                        duration={750}
                      >
-                        <Link
-                           activeClass='active'
-                           className='sidebar-link'
-                           to={text}
-                           spy={true}
-                           smooth={true}
-                           offset={0}
-                           duration={750}
-                        >
-                           {text.charAt(0).toUpperCase() + text.slice(1)}
-                        </Link>
-                     </ListItem>
-                  </React.Fragment>
-               ))}
-            </List>
+                        {text.charAt(0).toUpperCase() + text.slice(1)}
+                     </Link>
+                  </ListItem>
+               </React.Fragment>
+            ))}
+         </List>
+         <Tooltip title='Go back to home page'>
             <div className='home-btn'>
                <Button
                   color='contrast'
@@ -99,23 +110,22 @@ const Sidebar = () => {
                   <HomeIcon />
                </Button>
             </div>
-
-            <div className='sidebar-icons'>
-               <IconButton
-                  target='_blank'
-                  href='https://www.linkedin.com/in/cristian-ordonez-rd/'
-               >
-                  <LinkedInIcon color='secondary' />
-               </IconButton>
-               <IconButton
-                  target='_blank'
-                  href='https://github.com/cristianordonez'
-               >
-                  <GitHubIcon color='secondary' />
-               </IconButton>
-            </div>
-         </Drawer>
-      </motion.div>
+         </Tooltip>
+         <div className='sidebar-icons'>
+            <IconButton
+               target='_blank'
+               href='https://www.linkedin.com/in/cristian-ordonez-rd/'
+            >
+               <LinkedInIcon color='secondary' />
+            </IconButton>
+            <IconButton
+               target='_blank'
+               href='https://github.com/cristianordonez'
+            >
+               <GitHubIcon color='secondary' />
+            </IconButton>
+         </div>
+      </Drawer>
    );
 };
 

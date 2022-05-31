@@ -11,7 +11,6 @@ test('Project List renders correctly', async () => {
    render(<ProjectList />);
    await waitFor(() => {
       expect(screen.getByTestId('project-list')).toBeDefined();
-      screen.debug();
    });
 });
 
@@ -19,6 +18,5 @@ test('Project List sends request to receive repos', async () => {
    render(<ProjectList />);
    await waitFor(() => {
       expect(axiosMock.get).toHaveBeenCalled();
-      screen.debug();
    });
 });

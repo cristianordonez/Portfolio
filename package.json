@@ -7,7 +7,8 @@
       "test": "jest",
       "start": "nodemon server/server.js & npx webpack serve --open",
       "serve": "npx webpack serve --open",
-      "react-dev": "npx webpack --config webpack.config.js --mode development --watch"
+      "react-dev": "npx webpack --config webpack.config.js --mode development --watch",
+      "cypress": "cypress open"
    },
    "repository": {
       "type": "git",
@@ -48,6 +49,7 @@
       "babel-jest": "^28.1.0",
       "babel-loader": "^8.2.5",
       "css-loader": "^6.7.1",
+      "cypress": "^9.7.0",
       "file-loader": "^6.2.0",
       "jest": "^28.1.0",
       "jest-environment-jsdom": "^28.1.0",

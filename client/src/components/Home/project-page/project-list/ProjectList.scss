@@ -1,5 +1,11 @@
 @use '../../../App.scss' as *;
 
-// .project-list {
-//    @include set-size(100vh, 100%);
-// }
+.project-list {
+   @include flex-column();
+   align-items: center;
+   justify-content: space-between;
+   gap: 2rem;
+   .project-list-title {
+      align-self: flex-start;
+   }
+}

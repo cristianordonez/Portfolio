@@ -7,6 +7,7 @@ import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import Rocket from './rocket-svg/Rocket.jsx';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
    const [name, setName] = useState('');
@@ -44,7 +45,13 @@ const Contact = () => {
       setOpenError(false);
    };
    return (
-      <div className='contact-container' data-testid='contact-container'>
+      <motion.div
+         className='contact-container'
+         data-testid='contact-container'
+         initial={{ y: '150vh' }}
+         animate={{ y: 0 }}
+         transition={{ duration: 1, type: 'spring' }}
+      >
          <Typography align='center' variant='h2'>
             Contact Me
          </Typography>
@@ -120,7 +127,7 @@ const Contact = () => {
                possible.
             </Alert>
          </Snackbar>
-      </div>
+      </motion.div>
    );
 };
 

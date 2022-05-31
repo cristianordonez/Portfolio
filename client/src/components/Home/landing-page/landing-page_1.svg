@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 2560 1440" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(1.06062,0,0,1.06062,-84.4423,-138.519)">
-        <rect x="-80" y="-32" width="2696" height="1588" style="fill:rgb(6,16,30);"/>
+        <rect x="-80" y="-32" width="2696" height="1588" style="fill:rgb(10,25,41);"/>
     </g>
     <g id="Bird" transform="matrix(0.741965,0,0,0.741965,-162.912,286.291)">
         <path d="M782.87,570.5L793.94,568.19L786.09,577.24L782.87,570.5Z" style="fill:rgb(75,54,157);fill-rule:nonzero;"/>
@@ -1343,9 +1343,6 @@
         <g transform="matrix(1,0,0,1,682.511,712.903)">
             <path d="M73.32,25.29C79.752,26.103 84.628,31.635 84.628,38.118C84.628,45.211 78.792,51.048 71.698,51.048C65.715,51.048 60.476,46.895 59.11,41.07C62.838,34.983 67.655,29.634 73.32,25.29Z" style="fill:url(#_Linear140);fill-rule:nonzero;"/>
         </g>
-    </g>
-    <g transform="matrix(0.926817,-0.24834,0,0.865591,63.3471,238.366)">
-        <rect x="834.469" y="181.504" width="457.131" height="215.759" style="fill:rgb(61,145,159);"/>
     </g>
     <defs>
         <image id="_Image4" width="19px" height="278px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAEWCAYAAACE6qzLAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABnklEQVR4nO3cPW/CMBSFYTdi6NSpU8f+/z/F1KlTp07pUlAUYvseX5PYznskBkB+uA4fss7AS/DnM4QwhRCmS8Hij9vi/9s9Vux9a/E6KezNAoQQ5hj2agSik23uvyRu4BzYvLzT1GTLzCo2p55sZpsPUzYz2TKziiUvvopl0wS2ueUUlr1GCibHipmmPPwNiE4Zw+SLn8KKYsHMU96wom3FsCp5Ola85V23KU05qQtyWLWsMdeUfX3OBsfcn7c+tgkGBga2D3b/UW1uMjAtlCTO7FqSyKftGqEkyYeSRFhgxayhJBEXWLAqoSQpwyhJwMDAwE6HyaftbMCOwQYtSeTTdlGawihJnBm/JJExSpI8RkmSx9yhJNHTxNfJjA1akvSBUZKAgYGBVcQoSUbBKEkcaeq0TUniDCXJQ+SSpP/TNiWJsMCKudN3SSJjlCQ+rDhgYGBgg2DyaTsZMCmUJPnIp205lCTRUJJUzKEYJQklSdMYJUkec+dkJckJMUoSMLDBsJL/c9zK1Yt9rR9Qse/Ukxbsx/pKMezXCizzBxTgYggyno7SAAAAAElFTkSuQmCC"/>

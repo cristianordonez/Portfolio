@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import './Home.scss';
-import * as Scroll from 'react-scroll';
 import { Element } from 'react-scroll';
 import { motion } from 'framer-motion';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -19,7 +18,6 @@ const Contact = lazy(() =>
 );
 
 const Home = () => {
-   // const [repos, setRepos] = useState([]);
    const containerVariant = {
       initial: { opacity: 1, scale: 0.5 },
       animate: { opacity: 1, scale: 2 },
@@ -27,33 +25,10 @@ const Home = () => {
       transition: { easeInOut: [0.17, 0.67, 0.83, 0.67] },
    };
 
-   // const myRef = useRef();
-
    const contactSection = useRef(null);
    const projectSection = useRef(null);
    const isContactSectionVisible = useIntersectionObserver(contactSection);
    const isProjectSectionVisible = useIntersectionObserver(projectSection);
-   console.log('isContactSectionVisible:', isContactSectionVisible);
-   console.log('isProjectSectionVisible:', isProjectSectionVisible);
-   // useEffect(() => {
-
-   //    const callbackFunc = (entries) => {
-   //       const
-   //    }
-   //    const observer = new IntersectionObserver(callbackFunc, options);
-
-   //    observer.observe(myRef.current);
-   //    console.log('observer:', observer);
-
-   //    // axios
-   //    //    .get('/api/repos')
-   //    //    .then((repos) => {
-   //    //       setRepos(repos.data);
-   //    //    })
-   //    //    .catch((err) => {
-   //    //       console.log('err.response:', err.response);
-   //    //    });
-   // }, []);
 
    return (
       <div className='home'>
@@ -65,7 +40,7 @@ const Home = () => {
          <section id='projects' ref={projectSection} className='home-projects'>
             {isProjectSectionVisible && (
                <Element>
-                  <Suspense fallback={'Loading...'}>
+                  <Suspense fallback={''}>
                      <ProjectList />
                   </Suspense>
                </Element>
@@ -74,7 +49,7 @@ const Home = () => {
          <section id='contact' ref={contactSection} className='home-contact'>
             {isContactSectionVisible && (
                <Element>
-                  <Suspense fallback={'Loading...'}>
+                  <Suspense fallback={''}>
                      <Contact />
                   </Suspense>
                </Element>
