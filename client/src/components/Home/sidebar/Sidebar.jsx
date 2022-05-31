@@ -35,24 +35,30 @@ const Sidebar = () => {
    let navigate = useNavigate();
 
    const handleClick = (e) => {
-      console.log('e.target:', e.target);
-      handleScrollClick();
-      scroller.scrollTo(e.target.value, {
-         duration: 500,
-         smooth: true,
-      });
+      let target = e.target.innerHTML;
+      if (target === 'Contact') {
+         console.log('here');
+         scroller.scrollTo(e.target.innerHTML.toLowerCase(), {
+            duration: 500,
+            smooth: true,
+            offset: 2500,
+            // containerId: e.target.innerHTML.toLowerCase(),
+         });
+      } else {
+         scroller.scrollTo(e.target.innerHTML.toLowerCase(), {
+            duration: 500,
+            smooth: true,
+         });
+      }
    };
+
    const handleHomePage = () => {
       navigate('/');
    };
    const handleOpen = () => {
       setIsOpen(!isOpen);
    };
-   useEffect(() => {
-      setTimeout(() => {
-         setIsOpen(true);
-      });
-   }, []);
+
    return (
       <Drawer
          variant='persistent'
@@ -77,25 +83,28 @@ const Sidebar = () => {
             {['about', 'projects', 'contact'].map((text, index) => (
                <React.Fragment key={index}>
                   <ListItem
-                     onMouseOver={() => setIsHovered(true)}
-                     onMouseOut={() => setIsHovered(false)}
+                     // onMouseOver={() => setIsHovered(true)}
+                     // onMouseOut={() => setIsHovered(false)}
                      divider={true}
                      className='sidebar-list-item'
-                     key={index}
+                     // key={index}
                      onClick={handleClick}
-                     value={text}
+                     // value={text.charAt(0).toUpperCase() + text.slice(1)}
                   >
-                     <Link
+                     {/* <Link
                         activeClass='active'
                         className='sidebar-link'
+                        // onSetActive={handleSetActive}
                         to={text}
                         spy={true}
                         smooth={true}
+                        isDynamic={true}
                         offset={0}
+                        // delay={1000}
                         duration={750}
-                     >
-                        {text.charAt(0).toUpperCase() + text.slice(1)}
-                     </Link>
+                     > */}
+                     {text.charAt(0).toUpperCase() + text.slice(1)}
+                     {/* </Link> */}
                   </ListItem>
                </React.Fragment>
             ))}
