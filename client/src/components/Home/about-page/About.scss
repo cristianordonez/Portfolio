@@ -8,6 +8,12 @@
    .about-item {
       margin: 0;
    }
+   a {
+      align-self: flex-start;
+      // width: 50%;
+      display: flex;
+      gap: 5px;
+   }
 }
 
 @keyframes fade-in {

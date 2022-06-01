@@ -22,3 +22,16 @@
    z-index: 100;
    opacity: 0;
 }
+
+#javascript-frame:hover {
+   animation: enlarge 3s linear forwards;
+}
+
+@keyframes enlarge {
+   0% {
+      stroke-width: 20px;
+   }
+   100% {
+      stroke-width: 180px;
+   }
+}

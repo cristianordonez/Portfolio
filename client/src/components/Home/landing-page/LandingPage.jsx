@@ -7,20 +7,17 @@ import Bird2 from './landing-page-birds/Bird2.jsx';
 import Mug from './landing-page-mug/Mug.jsx';
 
 const SvgComponent = (props) => {
-   const containerVariant = {
-      initial: { opacity: 0, scale: 0.5 },
-      animate: { opacity: 1, scale: 1 },
-      exit: { opacity: 0, scale: 0.5 },
+   const handleHover = () => {
+      console.log('here in landing');
    };
    return (
-      <div initial='initial' animate='animate' exit='exit'>
+      <div>
          <Link
             to='/about'
             className='landing-page-link'
             data-testid='landing-page-link'
          ></Link>
          <svg
-            variants={containerVariant}
             width='100%'
             height='100%'
             viewBox='0 0 2560 1440'

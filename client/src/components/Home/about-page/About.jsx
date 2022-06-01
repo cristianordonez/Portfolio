@@ -1,6 +1,9 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import './About.scss';
+import Resume from '../../../../../public/Resume_2022.pdf';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 const About = () => {
    return (
@@ -26,6 +29,16 @@ const About = () => {
             to see the importance of maintaining a smooth, easy to navigate user
             experience that is accessible to all people.
          </Typography>
+         <Button
+            size='small'
+            variant='contained'
+            component='a'
+            download='resume'
+            href={Resume}
+         >
+            <PictureAsPdfIcon color='secondary' />
+            View Resume
+         </Button>
       </div>
    );
 };

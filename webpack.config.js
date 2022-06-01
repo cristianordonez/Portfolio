@@ -38,7 +38,7 @@ module.exports = {
          },
          {
             //enables webpack to handle images
-            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
             type: 'asset/resource',
          },
          {
