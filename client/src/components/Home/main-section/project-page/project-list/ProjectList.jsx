@@ -21,7 +21,11 @@ const ProjectList = ({ isVisible }) => {
       ? 'animate-projects project-list'
       : 'project-list';
    return (
-      <div className={currentClass} data-testid='project-list'>
+      <div
+         id='project-list'
+         className={currentClass}
+         data-testid='project-list'
+      >
          <Typography className='project-list-title' variant='h2'>
             Projects
          </Typography>

@@ -11,18 +11,18 @@ const ProjectList = lazy(() =>
 const Contact = lazy(() => import('./contact-page/Contact.jsx'));
 
 const Main = () => {
+   //used to see if these sections are in viewport
    const contactSection = useRef(null);
    const projectSection = useRef(null);
+   //contact section uses projectSection to render so that there are no issues with scrolling
+   //contact section does get its ref however to start animation
    const isContactSectionVisible = useIntersectionObserver(contactSection);
    const isProjectSectionVisible = useIntersectionObserver(projectSection);
 
+   console.log('isProjectSectionVisible:', isProjectSectionVisible);
    return (
       <div className='main'>
          <CssBaseline />
-         {/* <Sidebar
-            isProjectVisible={isProjectSectionVisible}
-            isContactVisible={isContactSectionVisible}
-         /> */}
          <Navbar />
          <section ref={projectSection} className='main-projects'>
             {isProjectSectionVisible && (

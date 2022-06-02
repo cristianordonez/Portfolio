@@ -1,5 +1,9 @@
 @use '../../../../App.scss' as *;
 
+#project-list {
+   padding-top: 5rem;
+}
+
 .project-list {
    @include flex-column();
    align-items: center;

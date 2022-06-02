@@ -12,6 +12,8 @@ const Nav = () => {
                activeClass='navlink-active'
                to={text}
                spy={true}
+               smooth={true}
+               duration={750}
             >
                {text.charAt(0).toUpperCase() + text.slice(1)}
             </Link>
