@@ -27,9 +27,8 @@ import {
 
 const drawerWidth = 160;
 
-const Sidebar = () => {
-   // const [isHovered, setIsHovered] = useState(false);
-   // const [isOpen, setIsOpen] = useState(false);
+const Sidebar = ({ isProjectVisible, isContactVisible }) => {
+   const [isOpen, setIsOpen] = useState(false);
    const [selectedIndex, setSelectedIndex] = useState(1);
    let navigate = useNavigate();
 
@@ -53,19 +52,16 @@ const Sidebar = () => {
    };
 
    const handleHomePage = () => {
-      navigate('/');
-   };
-   const handleOpen = () => {
-      setIsOpen(!isOpen);
+      scroller.scrollToTop();
    };
 
    return (
       <Drawer
          variant='persistent'
-         // open={isOpen}
-         open={true}
-         transitionDuration={600}
+         open={isOpen}
+         transitionDuration={2000}
          sx={{
+            position: 'relative',
             width: drawerWidth,
             flexShrink: 0,
             [`& .MuiDrawer-paper`]: {
@@ -76,7 +72,7 @@ const Sidebar = () => {
          anchor='left'
          data-testid='sidebar'
       >
-         <img src={Logo} onClick={handleHomePage}></img>
+         <img src={Logo} onClick={handleHomePage} loading='lazy'></img>
          <List className='sidebar-list'>
             <Divider className='sidebar-list-divider' />
 

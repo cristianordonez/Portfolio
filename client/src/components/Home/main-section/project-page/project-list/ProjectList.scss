@@ -1,4 +1,4 @@
-@use '../../../App.scss' as *;
+@use '../../../../App.scss' as *;
 
 .project-list {
    @include flex-column();
