@@ -6,14 +6,12 @@ module.exports = {
       getRepos: function () {
          let promise = db.Repo.find();
          let promiseData = promise.then((repos) => {
-            console.log('repos:', repos);
             return repos;
          });
          return promiseData;
       },
       //handles storing new repos
       storeRepos: function (repo) {
-         console.log('repo:', repo);
          db.Repo.create({
             _id: repo.id,
             name: repo.name,

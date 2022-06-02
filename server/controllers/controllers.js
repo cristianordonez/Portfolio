@@ -11,7 +11,6 @@ module.exports = {
             console.log('repos:', repos);
             res.send(repos);
          } catch (err) {
-            console.log('err:', err);
             res.send('Error retrieving repos from database.');
          }
       },
@@ -44,7 +43,7 @@ module.exports = {
             };
             let updatedRepo = await models.repos.updateRepo(repo);
          } catch (err) {
-            console.log('err:', err);
+            res.status(401).send('Error');
          }
       },
    },

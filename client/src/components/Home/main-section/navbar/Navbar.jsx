@@ -5,7 +5,7 @@ import Link from 'react-scroll/modules/components/Link';
 const Nav = () => {
    return (
       <div className='navbar'>
-         {['home', 'projects', 'contact'].map((text, index) => (
+         {['home', 'about', 'projects', 'contact'].map((text, index) => (
             <Link
                className='navlink'
                key={index}

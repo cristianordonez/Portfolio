@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App.jsx';
 import './Index.scss';
-import { BrowserRouter, Routes } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 const { palette } = createTheme();
 const { augmentColor } = palette;
@@ -69,8 +68,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-         <App />
-      </BrowserRouter>
+      <App />
    </ThemeProvider>
 );

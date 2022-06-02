@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import './About.scss';
-import Resume from '../../../../../public/Resume_2022.pdf';
+import Resume from '../../../../../../public/Resume_2022.pdf';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 const About = () => {
@@ -15,13 +15,12 @@ const About = () => {
             Cristian Ordoñez.
          </Typography>
          <Typography className='about-item' variant='body2'>
-            I'm a Registered Dietitian transitioning into a world of tech.
+            I’m a Registered Dietitian turned Software Developer.
          </Typography>
          <Typography className='about-item' variant='body2'>
-            During my experience in healthcare I specialized in working with
-            individuals in a low socioeconomic status, a population that
-            struggles with healthcare disparities such as lower access to and
-            use of care.
+            During my previous experience as an RD, I specialized in working
+            with populations that struggled with lower access to and use of
+            care.
          </Typography>
          <Typography className='about-item' variant='body2'>
             Therefore I sought to use technology to help people manage their

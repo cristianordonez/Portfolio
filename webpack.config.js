@@ -30,12 +30,7 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader',
          },
-         {
-            //enables webpack to handle css files
-            test: /\.css$/i,
-            // exclude: /node_modules/,
-            use: ['style-loader', 'css-loader'],
-         },
+
          {
             //enables webpack to handle images
             test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,

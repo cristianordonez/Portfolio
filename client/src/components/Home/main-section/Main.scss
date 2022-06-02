@@ -6,20 +6,24 @@
    @include flex-column();
    background-color: $primary-color;
    // overflow: hidden;
-   padding: 0;
+   .main-about {
+      @include set-size(100%);
+      @include flex-column();
+
+      min-height: 100vh;
+      padding-left: 20vw;
+      padding-right: 20vw;
+   }
    .main-projects {
       @include set-size(100%);
       @include flex-column();
       min-height: 100vh;
-      padding-top: 15rem;
-      // padding-left: 12vw;
-      // padding-right: 2vw;
-      // padding-top: 1rem;
+      padding-left: 20vw;
+      padding-right: 20vw;
    }
 
    .main-contact {
       @include set-size(100%);
       min-height: 100vh;
-      // padding-left: 12vw;
    }
 }

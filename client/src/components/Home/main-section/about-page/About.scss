@@ -1,9 +1,10 @@
-@use '../../App.scss' as *;
+@use '../../../App.scss' as *;
 
 .about-container {
    @include set-size(100%);
    @include flex-column();
    gap: 1rem;
+   padding-top: 15rem;
    animation: fade-in 0.5s linear forwards;
    .about-item {
       margin: 0;
