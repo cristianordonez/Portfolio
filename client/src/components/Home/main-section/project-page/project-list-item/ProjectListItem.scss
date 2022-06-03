@@ -1,19 +1,38 @@
 @use '../../../../App.scss' as *;
 
 .project-list-item-container {
-   @include flex-column();
+   @include flex-center();
+   gap: 0.75rem;
    align-items: center;
-   // margin: 15px 0;
-   img {
-      @include set-size(auto, 100%);
-   }
+   justify-content: space-between;
+   @include set-size(100%);
+
+   // box-sizing: content-box;
    .project-list-item-description {
-      @include flex-center-horiz();
-      // align-items: space-between;
-      @include set-size(100%);
+      @include flex-column();
+      min-height: 100%;
+      align-self: flex-start;
       justify-content: space-between;
+      align-items: stretch;
+      gap: 1.5rem;
+      .project-text {
+         align-self: flex-start;
+         flex-grow: 5;
+      }
+      .project-list-icons {
+         // gap: 1rem;
+         @include flex-center();
+         align-self: flex-start;
+
+         .icon-button {
+            position: relative;
+            right: 0.75rem;
+         }
+      }
    }
-   .project-list-icons {
-      @include flex-center();
+   .project-list-item-img {
+      img {
+         @include set-size(auto, 35vw);
+      }
    }
 }

@@ -39,18 +39,18 @@ const theme = createTheme({
       textfield: '#d5e0ea',
    },
    typography: {
-      fontFamily: '"Josefin Sans", "Helvetica", "Arial", sans-serif',
+      fontFamily: '"Open Sans",  sans-serif',
       h2: {
          color: '#F3C969',
-         fontSize: '3.5vw',
-         fontWeight: 500,
+         fontSize: '2.5vw',
+         fontWeight: 400,
       },
       h3: {
          color: '#5dfdcb',
-         fontSize: '3.2vw',
+         fontSize: '2vw',
       },
       body1: {
-         fontSize: '1.4vw',
+         fontSize: '1.3vw',
          color: '#d5e0ea',
       },
       body2: {

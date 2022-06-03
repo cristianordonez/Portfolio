@@ -30,26 +30,41 @@ const ProjectListItem = ({
          className='project-list-item-container'
          data-testid='project-list-item'
       >
-         <Typography align='center' variant='h3'>
-            {repoTitle}
-         </Typography>
-         <img src={image} alt={name} loading='lazy'></img>
          <div className='project-list-item-description'>
-            <Typography align='left' variant='body1'>
+            <Typography align='left' variant='h3'>
+               {repoTitle}
+            </Typography>
+
+            <Typography className='project-text' align='left' variant='body1'>
                {description}
             </Typography>
             <div className='project-list-icons'>
                <Tooltip title='View live link'>
-                  <IconButton target='_blank' href={homepageUrl}>
-                     <OpenInBrowserIcon color='secondary' />
+                  <IconButton
+                     aria-label='link to deployment'
+                     target='_blank'
+                     href={homepageUrl}
+                     className='icon-button'
+                     size='large'
+                  >
+                     <OpenInBrowserIcon fontSize='inherit' color='secondary' />
                   </IconButton>
                </Tooltip>
                <Tooltip title='Visit Github repo'>
-                  <IconButton target='_blank' href={githubUrl}>
-                     <GitHubIcon color='secondary' />
+                  <IconButton
+                     aria-label='link to repo'
+                     className='icon-button'
+                     target='_blank'
+                     href={githubUrl}
+                     size='large'
+                  >
+                     <GitHubIcon fontSize='inherit' color='secondary' />
                   </IconButton>
                </Tooltip>
             </div>
+         </div>
+         <div className='project-list-item-img'>
+            <img src={image} alt={name} loading='lazy'></img>
          </div>
       </div>
    );
