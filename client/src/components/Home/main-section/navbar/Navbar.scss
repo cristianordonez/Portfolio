@@ -4,7 +4,6 @@
    @include set-size(64px, 100vw);
    @include flex-center();
    justify-content: space-between;
-
    position: -webkit-sticky;
    position: sticky;
    top: 0;
@@ -12,14 +11,23 @@
    background-color: #1a2027;
    z-index: 10;
    color: $text-color;
-   padding: 0 20% 0 20%;
+   padding: 0 5% 0 5%;
    font-size: 20px;
-   .navlink {
-      color: $text-color;
-      text-decoration: none;
-      cursor: pointer;
+   .navbar-links {
+      @include set-size(100%);
+      @include flex-center();
+      gap: 5rem;
+      .navlink {
+         color: $text-color;
+         text-decoration: none;
+         cursor: pointer;
+      }
+      .navlink-active {
+         color: $alternate-color;
+      }
    }
-   .navlink-active {
-      color: $alternate-color;
+   .navbar-icons {
+      @include flex-center();
+      gap: 0.5rem;
    }
 }

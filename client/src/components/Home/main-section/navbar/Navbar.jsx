@@ -1,22 +1,47 @@
 import React from 'react';
 import './Navbar.scss';
 import Link from 'react-scroll/modules/components/Link';
+import IconButton from '@mui/material/IconButton';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Nav = () => {
    return (
       <div className='navbar'>
-         {['home', 'about', 'projects', 'contact'].map((text, index) => (
-            <Link
-               className='navlink'
-               key={index}
-               activeClass='navlink-active'
-               to={text}
-               spy={true}
-               // duration={}
+         <div className='navbar-links'>
+            {['home', 'about', 'projects', 'contact'].map((text, index) => (
+               <Link
+                  className='navlink'
+                  key={index}
+                  activeClass='navlink-active'
+                  to={text}
+                  spy={true}
+                  // duration={}
+               >
+                  {text.charAt(0).toUpperCase() + text.slice(1)}
+               </Link>
+            ))}
+         </div>
+         <div className='navbar-icons'>
+            <IconButton
+               aria-label='link to repo'
+               className='icon-button'
+               target='_blank'
+               href='https://github.com/cristianordonez'
+               size='large'
             >
-               {text.charAt(0).toUpperCase() + text.slice(1)}
-            </Link>
-         ))}
+               <GitHubIcon fontSize='inherit' color='secondary' />
+            </IconButton>
+            <IconButton
+               aria-label='link to repo'
+               className='icon-button'
+               target='_blank'
+               href='https://www.linkedin.com/'
+               size='large'
+            >
+               <LinkedInIcon fontSize='inherit' color='secondary' />
+            </IconButton>
+         </div>
       </div>
    );
 };
