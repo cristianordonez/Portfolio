@@ -6,7 +6,7 @@ const Main = lazy(() => import('./Home/main-section/Main.jsx'));
 const App = () => {
    return (
       <>
-         {/* <LandingPage /> */}
+         <LandingPage />
          <Main />
       </>
    );

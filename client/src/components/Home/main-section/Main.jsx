@@ -28,16 +28,16 @@ const Main = () => {
          <CssBaseline />
          <Navbar />
          <section ref={aboutSection} className='main-about'>
-            {isAboutSectionVisible && (
-               <Element id='about'>
-                  <Suspense fallback={<></>}>
-                     <About />
-                  </Suspense>
-               </Element>
-            )}
+            {/* {isAboutSectionVisible && ( */}
+            <Element id='about'>
+               <Suspense fallback={<></>}>
+                  <About />
+               </Suspense>
+            </Element>
+            {/* )} */}
          </section>
          <section ref={projectSection} className='main-projects'>
-            {isAboutSectionVisible && (
+            {isProjectSectionVisible && (
                <Element id='projects'>
                   <Suspense fallback={<></>}>
                      <ProjectList isVisible={isProjectSectionVisible} />
@@ -46,7 +46,7 @@ const Main = () => {
             )}
          </section>
          <section ref={contactSection} className='main-contact'>
-            {isAboutSectionVisible && (
+            {isProjectSectionVisible && (
                <Element id='contact'>
                   <Suspense fallback={<></>}>
                      <Contact isVisible={isContactSectionVisible} />
