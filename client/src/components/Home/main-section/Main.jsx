@@ -37,22 +37,22 @@ const Main = () => {
             {/* )} */}
          </section>
          <section ref={projectSection} className='main-projects'>
-            {isProjectSectionVisible && (
-               <Element id='projects'>
-                  <Suspense fallback={<></>}>
-                     <ProjectList isVisible={isProjectSectionVisible} />
-                  </Suspense>
-               </Element>
-            )}
+            {/* {isProjectSectionVisible && ( */}
+            <Element id='projects'>
+               <Suspense fallback={<></>}>
+                  <ProjectList isVisible={isProjectSectionVisible} />
+               </Suspense>
+            </Element>
+            {/* )} */}
          </section>
          <section ref={contactSection} className='main-contact'>
-            {isProjectSectionVisible && (
-               <Element id='contact'>
-                  <Suspense fallback={<></>}>
-                     <Contact isVisible={isContactSectionVisible} />
-                  </Suspense>
-               </Element>
-            )}
+            {/* {isProjectSectionVisible && ( */}
+            <Element id='contact'>
+               <Suspense fallback={<></>}>
+                  <Contact isVisible={isContactSectionVisible} />
+               </Suspense>
+            </Element>
+            {/* )} */}
          </section>
       </div>
    );
