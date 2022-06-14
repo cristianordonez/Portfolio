@@ -7,7 +7,17 @@
    gap: 5rem;
    padding-top: 15rem;
    animation: fade-in 1s linear forwards;
-
+   ul {
+      list-style: none;
+   }
+   ul li::before {
+      content: '\2022';
+      color: $secondary-color;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      font-weight: bold;
+   }
    .about-container-text {
       @include set-size(100%, 50%);
       @include flex-column();
@@ -29,6 +39,9 @@
       font-size: 0.8rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      column-gap: 1.5rem;
+      justify-items: stretch;
+      padding-left: 0;
    }
 }
 

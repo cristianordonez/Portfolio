@@ -6,9 +6,10 @@ import Typography from '@mui/material/Typography';
 
 const ProjectList = ({ isVisible }) => {
    const [repos, setRepos] = useState([]);
+   console.log('__API__:', __API__);
    useEffect(() => {
       axios
-         .get('/api/repos')
+         .get(`${__API__}/repos`)
          .then((repos) => {
             setRepos(repos.data);
          })
@@ -26,7 +27,7 @@ const ProjectList = ({ isVisible }) => {
          className={currentClass}
          data-testid='project-list'
       >
-         <Typography className='project-list-title' variant='h2'>
+         <Typography align='center' className='project-list-title' variant='h2'>
             Projects
          </Typography>
          {repos.map((repo) => (

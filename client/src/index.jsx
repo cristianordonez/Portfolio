@@ -47,14 +47,14 @@ const theme = createTheme({
       },
       h3: {
          color: '#5dfdcb',
-         fontSize: '2.2rem',
+         fontSize: '2rem',
       },
       body1: {
-         fontSize: '1.4rem',
+         fontSize: '1.2rem',
          color: '#d5e0ea',
       },
       body2: {
-         fontSize: '1.1rem',
+         fontSize: '1rem',
          color: '#d5e0ea',
       },
       subtitle1: {

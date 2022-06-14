@@ -15,7 +15,7 @@ const ProjectListItem = ({
    githubUrl,
 }) => {
    const getTitleNames = (name) => {
-      let lowercaseTitles = name.replaceAll('-', ' ').slice(0, -4).split(' ');
+      let lowercaseTitles = name.replaceAll('-', ' ').split(' ');
       return lowercaseTitles
          .map((name) => {
             let letter = name[0].toUpperCase();
@@ -35,7 +35,7 @@ const ProjectListItem = ({
                {repoTitle}
             </Typography>
 
-            <Typography className='project-text' align='left' variant='body1'>
+            <Typography className='project-text' align='left' variant='body2'>
                {description}
             </Typography>
             <div className='project-list-icons'>

@@ -5,15 +5,18 @@
    gap: 0.75rem;
    align-items: center;
    justify-content: space-between;
+   flex-wrap: wrap;
    @include set-size(100%);
 
    // box-sizing: content-box;
    .project-list-item-description {
       @include flex-column();
-      min-height: 100%;
+      // min-height: 100%;
+      width: 40%;
       align-self: flex-start;
       justify-content: space-between;
       align-items: stretch;
+      word-break: break-word;
       gap: 1.5rem;
       .project-text {
          align-self: flex-start;
@@ -32,7 +35,7 @@
    }
    .project-list-item-img {
       img {
-         @include set-size(auto, 35vw);
+         @include set-size(auto, 40vw);
       }
    }
 }

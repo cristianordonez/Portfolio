@@ -16,21 +16,21 @@ const About = () => {
             <Typography className='about-item' variant='h3'>
                Cristian Ordoñez.
             </Typography>
-            <Typography className='about-item' variant='body2'>
+            <Typography className='about-item' variant='body1'>
                I’m a Registered Dietitian turned Software Developer.
             </Typography>
-            <Typography className='about-item' variant='body2'>
+            <Typography className='about-item' variant='body1'>
                During my previous experience as an RD, I specialized in working
                with populations that struggled with lower access to and use of
                care.
             </Typography>
-            <Typography className='about-item' variant='body2'>
+            <Typography className='about-item' variant='body1'>
                Therefore I sought to use technology to help people manage their
                symptoms and improve their overall quality of life. This allowed
                me to see the importance of maintaining a smooth, easy to
                navigate user experience that is accessible to all people.
             </Typography>
-            <Typography variant='body2'>
+            <Typography variant='body1'>
                Here are just a few of the technologies I use:
             </Typography>
             <ul className='about-list'>

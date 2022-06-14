@@ -1,7 +1,8 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 var cors = require('cors');
-const port = 1128;
+const port = 8080;
 const bodyParser = require('body-parser');
 const app = express();
 const router = express.Router();
@@ -9,8 +10,10 @@ const config = require('./config/config');
 const db = require('./database/db');
 const controllers = require('./controllers/controllers');
 const nodemailer = require('nodemailer');
+const compression = require('compression');
 
 //MIDDLEWARE
+app.use(compression());
 app.use(cors());
 app.use(express.static(path.join(__dirname, '/client/dist')));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,6 +22,7 @@ app.use(bodyParser.json());
 //ROUTES
 //handles initial graphQL query for all data
 app.get('/repos', (req, res) => {
+   console.log('here in get repos route');
    controllers.repos.getRepos(req, res);
 });
 

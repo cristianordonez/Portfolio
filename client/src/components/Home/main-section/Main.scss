@@ -11,15 +11,15 @@
       @include flex-column();
 
       min-height: 100vh;
-      padding-left: 20vw;
-      padding-right: 20vw;
+      padding-left: 15vw;
+      padding-right: 15vw;
    }
    .main-projects {
       @include set-size(100%);
       @include flex-column();
       min-height: 100vh;
-      padding-left: 20vw;
-      padding-right: 20vw;
+      padding-left: 15vw;
+      padding-right: 15vw;
    }
 
    .main-contact {

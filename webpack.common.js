@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const path = require('path');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,6 +11,7 @@ const BundleAnalyzerPlugin =
 let apiHost;
 
 let setupAPI = function () {
+   console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
    if (process.env.NODE_ENV === 'production') {
       apiHost = JSON.stringify('http://localhost:8080');
    } else if (process.env.NODE_ENV === 'development') {
@@ -46,14 +48,14 @@ module.exports = {
       ],
    },
    plugins: [
+      new webpack.DefinePlugin({
+         __API__: apiHost,
+      }),
       new HtmlWebpackPlugin({
          title: 'Frontend Capstone',
          template: 'template.html',
       }),
       new MiniCssExtractPlugin(),
-      new webpack.DefinePlugin({
-         __API__: apiHost,
-      }),
       //! uncomment this line to visualize webpack bundles in browser
       // new BundleAnalyzerPlugin(),
    ],
