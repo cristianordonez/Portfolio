@@ -21,9 +21,14 @@
       margin: 0;
       padding: 0;
       img {
-         @include set-size(400px, auto);
+         @include set-size(20rem, auto);
          object-fit: cover;
       }
+   }
+   .about-list {
+      font-size: 0.8rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
    }
 }
 

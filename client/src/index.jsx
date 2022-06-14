@@ -19,7 +19,7 @@ const theme = createTheme({
          main: '#0a1929',
       },
       secondary: {
-         main: '#a1e8cc',
+         main: '#5dfdcb',
       },
       neutral: {
          main: '#d5e0ea',
@@ -39,26 +39,26 @@ const theme = createTheme({
       textfield: '#d5e0ea',
    },
    typography: {
-      fontFamily: '"Open Sans",  sans-serif',
+      fontFamily: '"Montserrat",  sans-serif',
       h2: {
          color: '#F3C969',
-         fontSize: '2.5vw',
+         fontSize: '3rem',
          fontWeight: 400,
       },
       h3: {
          color: '#5dfdcb',
-         fontSize: '2vw',
+         fontSize: '2.2rem',
       },
       body1: {
-         fontSize: '1.3vw',
+         fontSize: '1.4rem',
          color: '#d5e0ea',
       },
       body2: {
-         fontSize: '1.2vw',
+         fontSize: '1.1rem',
          color: '#d5e0ea',
       },
       subtitle1: {
-         fontSize: '1.6vw',
+         fontSize: '1rem',
          color: '#F3C969',
       },
    },

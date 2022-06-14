@@ -30,6 +30,20 @@ const About = () => {
                me to see the importance of maintaining a smooth, easy to
                navigate user experience that is accessible to all people.
             </Typography>
+            <Typography variant='body2'>
+               Here are just a few of the technologies I use:
+            </Typography>
+            <ul className='about-list'>
+               <li>Javascript</li>
+               <li>Typescript</li>
+               <li>Node.js</li>
+               <li>MySQL</li>
+               <li>MongoDB</li>
+               <li>Sass</li>
+               <li>React</li>
+               <li>Jest</li>
+               <li>Cypress</li>
+            </ul>
             <Button
                size='small'
                variant='contained'
