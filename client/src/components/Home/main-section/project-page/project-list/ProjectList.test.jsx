@@ -3,7 +3,6 @@ import ProjectList from './ProjectList.jsx';
 import { render, screen, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 import axiosMock from 'axios';
 import 'regenerator-runtime/runtime';
 

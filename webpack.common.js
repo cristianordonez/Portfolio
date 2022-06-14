@@ -11,10 +11,9 @@ const BundleAnalyzerPlugin =
 let apiHost;
 
 let setupAPI = function () {
-   console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
    if (process.env.NODE_ENV === 'production') {
       apiHost = JSON.stringify('http://localhost:8080');
-   } else if (process.env.NODE_ENV === 'development') {
+   } else {
       apiHost = JSON.stringify('/api');
    }
 };

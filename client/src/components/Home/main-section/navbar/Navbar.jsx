@@ -16,7 +16,6 @@ const Nav = () => {
                   activeClass='navlink-active'
                   to={text}
                   spy={true}
-                  // duration={}
                >
                   {text.charAt(0).toUpperCase() + text.slice(1)}
                </Link>
@@ -27,6 +26,7 @@ const Nav = () => {
                aria-label='link to repo'
                className='icon-button'
                target='_blank'
+               data-testid='github button'
                href='https://github.com/cristianordonez'
                size='large'
             >
@@ -36,6 +36,7 @@ const Nav = () => {
                aria-label='link to repo'
                className='icon-button'
                target='_blank'
+               data-testid='linkedin button'
                href='https://www.linkedin.com/'
                size='large'
             >

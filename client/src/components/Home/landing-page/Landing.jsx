@@ -21,6 +21,7 @@ const Landing = () => {
             color='secondary'
             variant='contained'
             aria-label='go to main page content'
+            className='landing-page-link'
             sx={{
                fontWeight: 'bold',
             }}

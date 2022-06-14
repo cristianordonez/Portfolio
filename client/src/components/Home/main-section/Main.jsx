@@ -28,16 +28,16 @@ const Main = () => {
          <CssBaseline />
          <Navbar />
          <section ref={aboutSection} className='main-about'>
-            {/* {isAboutSectionVisible && ( */}
+            {/* about section does not get lazy loaded, but when */}
+            {/* it is visible the rest of the page will load  */}
             <Element id='about'>
                <Suspense fallback={<></>}>
                   <About />
                </Suspense>
             </Element>
-            {/* )} */}
          </section>
          <section ref={projectSection} className='main-projects'>
-            {isProjectSectionVisible && (
+            {isAboutSectionVisible && (
                <Element id='projects'>
                   <Suspense fallback={<></>}>
                      <ProjectList isVisible={isProjectSectionVisible} />
@@ -46,8 +46,8 @@ const Main = () => {
             )}
          </section>
          <section ref={contactSection} className='main-contact'>
-            {isProjectSectionVisible && (
-               <Element id='contact'>
+            {isAboutSectionVisible && (
+               <Element id='contact' className='contact'>
                   <Suspense fallback={<></>}>
                      <Contact isVisible={isContactSectionVisible} />
                   </Suspense>

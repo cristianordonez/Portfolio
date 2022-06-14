@@ -22,7 +22,7 @@ const Contact = ({ isVisible }) => {
       setBeginAnimation(true);
       e.preventDefault();
       let requestData = { name, email, subject, message };
-      let promise = axios.post('/api/contact', requestData);
+      let promise = axios.post(`${__API__}/contact`, requestData);
       promise.then((response) => {
          setOpenError(false);
          setOpen(true);
@@ -104,7 +104,7 @@ const Contact = ({ isVisible }) => {
          </div>
          {beginAnimation && <Rocket />}
          <Snackbar
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             onClose={handleClose}
             open={open}
             autoHideDuration={5000}
@@ -115,14 +115,14 @@ const Contact = ({ isVisible }) => {
             </Alert>
          </Snackbar>
          <Snackbar
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             onClose={handleClose}
             open={openError}
             autoHideDuration={5000}
          >
             <Alert onClose={handleClose} severity='error'>
-               Your message has been sent! I will get back to you as soon as
-               possible.
+               Your message was unable to send. Please try again later, or reach
+               me at my LinkedIn account.
             </Alert>
          </Snackbar>
       </div>
