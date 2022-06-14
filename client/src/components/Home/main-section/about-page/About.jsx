@@ -48,8 +48,11 @@ const About = () => {
                size='small'
                variant='contained'
                component='a'
-               download='resume'
                color='secondary'
+               download='resume'
+               sx={{
+                  fontWeight: 'bold',
+               }}
                href={Resume}
             >
                <PictureAsPdfIcon color='primary' />

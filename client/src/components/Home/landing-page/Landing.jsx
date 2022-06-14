@@ -20,6 +20,10 @@ const Landing = () => {
             onClick={() => handleClick()}
             color='secondary'
             variant='contained'
+            aria-label='go to main page content'
+            sx={{
+               fontWeight: 'bold',
+            }}
          >
             View My Work
          </Button>
