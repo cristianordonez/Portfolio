@@ -51,7 +51,7 @@ module.exports = {
          __API__: apiHost,
       }),
       new HtmlWebpackPlugin({
-         title: 'Frontend Capstone',
+         title: 'Portfolio',
          template: 'template.html',
       }),
       new MiniCssExtractPlugin(),
