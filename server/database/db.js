@@ -26,5 +26,3 @@ const Repo = mongoose.model('Repo', RepoSchema);
 module.exports = {
    Repo,
 };
-
-// mongodb+srv://cristianordonez:256Yxnnz97!!@github-fetcher.ybzde.mongodb.net/repo?retryWrites=true&w=majority
