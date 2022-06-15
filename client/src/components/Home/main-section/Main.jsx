@@ -22,7 +22,6 @@ const Main = () => {
    const isProjectSectionVisible = useIntersectionObserver(projectSection);
    const isAboutSectionVisible = useIntersectionObserver(aboutSection);
 
-   console.log('isProjectSectionVisible:', isProjectSectionVisible);
    return (
       <div className='main'>
          <CssBaseline />
