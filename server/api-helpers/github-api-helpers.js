@@ -1,4 +1,3 @@
-const token = require('../config/config').GITHUB_API_TOKEN;
 const axios = require('axios');
 
 //REST api url for getting public repos
@@ -45,7 +44,7 @@ const getSingleRepoQuery = (repoName) => {
 const getReposFromGithub = () => {
    let promise = axios.post(graphQLUrl, graphQLQuery, {
       headers: {
-         Authorization: `bearer ${token}`,
+         Authorization: `bearer ${process.env.GITHUB_API_TOKEN}`,
       },
    });
    let promiseData = promise.then((response) => {
@@ -59,7 +58,7 @@ const getSingleRepo = (repoName) => {
    let query = getSingleRepoQuery(repoName);
    let promise = axios.post(graphQLUrl, query, {
       headers: {
-         Authorization: `bearer ${token}`,
+         Authorization: `bearer ${process.env.GITHUB_API_TOKEN}`,
       },
    });
    let promiseData = promise.then((response) => {
