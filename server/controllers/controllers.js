@@ -8,7 +8,6 @@ module.exports = {
       getRepos: async function (req, res) {
          try {
             let repos = await models.repos.getRepos();
-            console.log('repos:', repos);
             res.send(repos);
          } catch (err) {
             res.send('Error retrieving repos from database.');
@@ -26,7 +25,8 @@ module.exports = {
             console.error(err);
          }
       },
-      //when webhook is received, sends another graphQL query to get data for changed repo image
+      //when webhook is received, sends another graphQL query to get data for changed repo data
+      //original request will contain all data except img, so graphQL req will be sent to obtain this value
       updateRepos: async function (req, res) {
          try {
             let repoToUpdate = await githubAPIHelper.getSingleRepo(
@@ -43,7 +43,7 @@ module.exports = {
             };
             let updatedRepo = await models.repos.updateRepo(repo);
          } catch (err) {
-            res.status(401).send('Error');
+            res.status(401).send(err);
          }
       },
    },

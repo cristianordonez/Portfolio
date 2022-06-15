@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 //ROUTES
 //handles initial graphQL query for all data
 app.get('/repos', (req, res) => {
+   console.log('req:', req);
    controllers.repos.getRepos(req, res);
 });
 
@@ -28,7 +29,7 @@ app.post('/repos', (req, res) => {
    controllers.repos.storeRepos(req, res);
 });
 
-//handles automatic webhook integration (images not included)
+//handles automatic webhook integration
 app.post('/', (req, res) => {
    controllers.repos.updateRepos(req, res);
 });
@@ -59,7 +60,6 @@ app.post('/contact', (req, res) => {
          console.log('err:', err);
          res.status(400).send('Unable to send message.');
       } else {
-         console.log('data:', data);
          res.status(201).send('Email has been sent');
       }
    });
