@@ -42,6 +42,7 @@ module.exports = {
                url: requestData.url,
             };
             let updatedRepo = await models.repos.updateRepo(repo);
+            res.send('Success!!!');
          } catch (err) {
             res.status(401).send(err);
          }
