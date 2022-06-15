@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-
-const mongoDB = `mongodb+srv://cristianordonezrd:${process.env.MONGODB_PASSWORD}@portfolio-app-cluster.rb558f9.mongodb.net/?retryWrites=true&w=majority`;
+const mongoDB = `mongodb+srv://cristianordonezrd:${process.env.MONGODB_PASSWORD}@portfolio-app-cluster.rb558f9.mongodb.net/repo?retryWrites=true&w=majority`;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-
+console.log('mongoDB:', mongoDB);
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -27,3 +26,5 @@ const Repo = mongoose.model('Repo', RepoSchema);
 module.exports = {
    Repo,
 };
+
+// mongodb+srv://cristianordonez:256Yxnnz97!!@github-fetcher.ybzde.mongodb.net/repo?retryWrites=true&w=majority
