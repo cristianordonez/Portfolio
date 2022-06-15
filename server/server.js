@@ -48,15 +48,6 @@ let transporter = nodemailer.createTransport({
 
 //handles post requests to contact form
 app.post('/contact', (req, res) => {
-   console.log('process.env.OAUTH_CLIENT_ID:', process.env.OAUTH_CLIENT_ID);
-   console.log(
-      'process.env.OAUTH_CLIENT_SECRET:',
-      process.env.OAUTH_CLIENT_SECRET
-   );
-   console.log('process.env.EMAIL_USERNAME:', process.env.EMAIL_USERNAME);
-   console.log('process.env.pass:', process.env.EMAIL_PASSWORD);
-   console.log('here in contact route');
-
    let mailOptions = {
       from: req.body.name,
       to: process.env.EMAIL_USERNAME, //receiving address
