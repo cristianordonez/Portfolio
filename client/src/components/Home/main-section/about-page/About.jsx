@@ -60,7 +60,11 @@ const About = () => {
             </Button>
          </div>
          <div className='about-container-image'>
-            <img src={PortfolioImage} loading='lazy'></img>
+            <img
+               alt='portfolio image'
+               src={PortfolioImage}
+               loading='lazy'
+            ></img>
          </div>
       </div>
    );

@@ -24,7 +24,7 @@ const ProjectListItem = ({
          .join(' ');
    };
    let repoTitle = getTitleNames(name);
-
+   console.log('githubUrl:', githubUrl);
    return (
       <div
          className='project-list-item-container'

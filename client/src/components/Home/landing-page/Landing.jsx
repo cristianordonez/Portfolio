@@ -24,6 +24,7 @@ const Landing = () => {
             className='landing-page-link'
             sx={{
                fontWeight: 'bold',
+               color: 'black',
             }}
          >
             View My Work
