@@ -12,7 +12,7 @@ let apiHost;
 
 let setupAPI = function () {
    if (process.env.NODE_ENV === 'production') {
-      apiHost = JSON.stringify('https://cristians-portfolio.herokuapp.com');
+      apiHost = JSON.stringify('');
    } else {
       apiHost = JSON.stringify('/api');
    }
