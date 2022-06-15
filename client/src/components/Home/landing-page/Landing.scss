@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600');
-
 .landing {
-   background-image: linear-gradient(to bottom right, #eb01a5, #d13531);
    width: 100vw;
    height: 100vh;
    display: flex;
@@ -10,15 +7,22 @@
    align-items: center;
    position: relative;
    overflow: hidden;
+   background-color: #0a1929;
    background-size: cover;
    color: white;
-   font-family: sans-serif;
    font-weight: 200;
    z-index: 1;
 }
 
 .landing * {
    z-index: 2;
+}
+
+.landing-text {
+   font-family: Montserrat, sans-serif;
+
+   font-size: 1.2rem;
+   font-weight: 400;
 }
 
 h1 {
@@ -35,7 +39,7 @@ h1 {
 }
 
 .background-shapes {
-   content: '';
+   // content: '';
    position: absolute;
    z-index: 2;
    left: 0;
@@ -45,37 +49,21 @@ h1 {
    background-size: 100%;
    animation: 240s infiniteScroll linear infinite;
    background-repeat-x: repeat;
-   background-image: url(./background_1.svg);
-}
-
-@-webkit-keyframes infiniteScroll {
-   0% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-   }
-
-   50% {
-      -webkit-transform: translate3d(0, -846px, 0);
-      transform: translate3d(0, -846, 0);
-   }
-   100% {
-      -webkit-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-   }
+   background-image: url(./custom-bg_1.svg);
 }
 
 @keyframes infiniteScroll {
    0% {
-      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
    }
 
    50% {
-      -webkit-transform: translate3d(0, -846px, 0);
+      transform: translate3d(0, -846px, 0);
       transform: translate3d(0, -846, 0);
    }
    100% {
-      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
    }
 }

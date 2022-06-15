@@ -15,7 +15,7 @@ const compression = require('compression');
 //MIDDLEWARE
 app.use(compression());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
