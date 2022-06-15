@@ -24,7 +24,7 @@ const ProjectListItem = ({
          .join(' ');
    };
    let repoTitle = getTitleNames(name);
-   console.log('githubUrl:', githubUrl);
+
    return (
       <div
          className='project-list-item-container'
@@ -39,17 +39,22 @@ const ProjectListItem = ({
                {description}
             </Typography>
             <div className='project-list-icons'>
-               <Tooltip title='View live link'>
-                  <IconButton
-                     aria-label='link to deployment'
-                     target='_blank'
-                     href={homepageUrl}
-                     className='icon-button'
-                     size='large'
-                  >
-                     <OpenInBrowserIcon fontSize='inherit' color='secondary' />
-                  </IconButton>
-               </Tooltip>
+               {homepageUrl && (
+                  <Tooltip title='View live link'>
+                     <IconButton
+                        aria-label='link to deployment'
+                        target='_blank'
+                        href={homepageUrl}
+                        className='icon-button'
+                        size='large'
+                     >
+                        <OpenInBrowserIcon
+                           fontSize='inherit'
+                           color='secondary'
+                        />
+                     </IconButton>
+                  </Tooltip>
+               )}
                <Tooltip title='Visit Github repo'>
                   <IconButton
                      aria-label='link to repo'
