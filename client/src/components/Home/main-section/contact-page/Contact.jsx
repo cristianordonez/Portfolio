@@ -53,6 +53,10 @@ const Contact = ({ isVisible }) => {
          <Typography align='center' variant='h2'>
             Contact Me
          </Typography>
+         <Typography variant='body1' className='contact-text' align='center'>
+            Interested in working together? Get in touch by filling out the form
+            below and I will get back to you as soon as I can.
+         </Typography>
          <div className='contact-inner-container'>
             <form className='contact-form' onSubmit={handleSubmit}>
                <TextField

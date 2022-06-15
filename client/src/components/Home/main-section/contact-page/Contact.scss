@@ -9,7 +9,10 @@
    overflow: hidden;
    opacity: 0;
 }
-
+.contact-text {
+   word-break: break-word;
+   width: 50%;
+}
 .contact-inner-container {
    @include flex-center();
    flex-wrap: wrap;

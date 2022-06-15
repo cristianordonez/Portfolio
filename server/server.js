@@ -6,7 +6,6 @@ const port = 8080;
 const bodyParser = require('body-parser');
 const app = express();
 const router = express.Router();
-const config = require('./config/config');
 const db = require('./database/db');
 const controllers = require('./controllers/controllers');
 const nodemailer = require('nodemailer');
@@ -22,7 +21,6 @@ app.use(bodyParser.json());
 //ROUTES
 //handles initial graphQL query for all data
 app.get('/repos', (req, res) => {
-   console.log('here in get repos route');
    controllers.repos.getRepos(req, res);
 });
 
