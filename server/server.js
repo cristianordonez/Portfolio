@@ -26,12 +26,12 @@ app.get('/api/repos', (req, res) => {
    controllers.repos.getRepos(req, res);
 });
 
-app.post('/repos', (req, res) => {
+app.post('/api/repos', (req, res) => {
    controllers.repos.storeRepos(req, res);
 });
 
 //handles automatic webhook integration
-app.post('/', (req, res) => {
+app.post('/api', (req, res) => {
    controllers.repos.updateRepos(req, res);
 });
 
