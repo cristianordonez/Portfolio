@@ -9,7 +9,7 @@ const Nav = () => {
    return (
       <div className='navbar'>
          <div className='navbar-links'>
-            {['home', 'about', 'projects', 'contt'].map((text, index) => (
+            {['home', 'about', 'projects', 'contact'].map((text, index) => (
                <Link
                   className='navlink'
                   key={index}
