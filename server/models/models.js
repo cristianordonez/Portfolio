@@ -18,7 +18,7 @@ module.exports = {
             openGraphImageUrl: repo.openGraphImageUrl,
             description: repo.description,
             homepageUrl: repo.homepageUrl,
-            url: repo.url,
+            url: repo.html_url,
          });
       },
       //handles updating repo triggered by webhook
