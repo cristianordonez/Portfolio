@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 
 const ProjectList = ({ isVisible }) => {
    const [repos, setRepos] = useState([]);
+   console.log('__API__:', __API__);
    useEffect(() => {
       axios
          .get(`${__API__}/repos`)

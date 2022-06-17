@@ -11,10 +11,10 @@ const BundleAnalyzerPlugin =
 let apiHost;
 
 let setupAPI = function () {
-   if (process.env.NODE_ENV === 'production') {
-      apiHost = JSON.stringify('');
-   } else {
+   if (process.env.NODE_ENV === 'development') {
       apiHost = JSON.stringify('/api');
+   } else {
+      apiHost = JSON.stringify('');
    }
 };
 
