@@ -32,6 +32,7 @@ app.post('/api/repos', (req, res) => {
 
 //handles automatic webhook integration
 app.post('/', (req, res) => {
+   console.log('here in update');
    controllers.repos.updateRepos(req, res);
 });
 
