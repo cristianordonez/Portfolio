@@ -20,11 +20,11 @@ module.exports = merge(common, {
       static: DIST_DIR,
       allowedHosts: 'auto',
       port: 3000,
-      proxy: {
-         '/api': {
-            target: 'http://localhost:8080',
-            pathRewrite: { '^/api': '' },
-         },
-      },
+      // proxy: {
+      //    '/api': {
+      //       target: 'http://localhost:8080',
+      //       pathRewrite: { '^/api': '' },
+      //    },
+      // },
    },
 });

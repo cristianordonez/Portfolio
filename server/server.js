@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 //ROUTES
 //handles initial graphQL query for all data
-app.get('/repos', (req, res) => {
+app.get('/api/repos', (req, res) => {
    console.log('req:', req);
    controllers.repos.getRepos(req, res);
 });
@@ -48,7 +48,7 @@ let transporter = nodemailer.createTransport({
 });
 
 //handles post requests to contact form
-app.post('/contact', (req, res) => {
+app.post('/api/contact', (req, res) => {
    let mailOptions = {
       from: req.body.name,
       to: process.env.EMAIL_USERNAME, //receiving address
@@ -57,7 +57,6 @@ app.post('/contact', (req, res) => {
    };
    transporter.sendMail(mailOptions, (err, data) => {
       if (err) {
-         console.log('err:', err);
          res.status(400).send('Unable to send message.');
       } else {
          res.status(201).send('Email has been sent');

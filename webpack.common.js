@@ -10,11 +10,12 @@ const BundleAnalyzerPlugin =
 
 let apiHost;
 
+//todo change production path
 let setupAPI = function () {
    if (process.env.NODE_ENV === 'development') {
       apiHost = JSON.stringify('/api');
    } else {
-      apiHost = JSON.stringify('');
+      apiHost = JSON.stringify('/api');
    }
 };
 
