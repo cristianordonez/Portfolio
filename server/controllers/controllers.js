@@ -29,11 +29,12 @@ module.exports = {
       //original request will contain all data except img, so graphQL req will be sent to obtain this value
       updateRepos: async function (req, res) {
          console.log('req.body.repository.name:', req.body.repository.name);
+         console.log('req.body.repository:', req.body.repository);
          try {
             let repoToUpdate = await githubAPIHelper.getSingleRepo(
                req.body.repository.name
             );
-
+            console.log('requestData:', requestData);
             let requestData = req.body.repository;
             let repo = {
                id: repoToUpdate.id,
@@ -41,7 +42,7 @@ module.exports = {
                openGraphImageUrl: repoToUpdate.openGraphImageUrl,
                description: requestData.description,
                homepage: requestData.homepageUrl || requestData.homepage,
-               url: requestData.url,
+               url: requestData.html_url,
             };
             let updatedRepo = await models.repos.updateRepo(repo);
             res.send('Success!!!');

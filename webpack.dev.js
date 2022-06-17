@@ -20,6 +20,7 @@ module.exports = merge(common, {
       static: DIST_DIR,
       allowedHosts: 'auto',
       port: 3000,
+      //! removed for https connection
       // proxy: {
       //    '/api': {
       //       target: 'http://localhost:8080',

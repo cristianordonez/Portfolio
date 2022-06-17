@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//!added api to routes for https connection
 //ROUTES
 //handles initial graphQL query for all data
 app.get('/api/repos', (req, res) => {
