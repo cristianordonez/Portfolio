@@ -38,38 +38,35 @@ const ProjectListItem = ({
             <Typography className='project-text' align='left' variant='body2'>
                {description}
             </Typography>
-            <div className='project-list-icons'>
-               {homepageUrl && (
-                  <Tooltip title='View live link'>
-                     <IconButton
-                        aria-label='link to deployment'
-                        target='_blank'
-                        href={homepageUrl}
-                        className='icon-button'
-                        size='large'
-                     >
-                        <OpenInBrowserIcon
-                           fontSize='inherit'
-                           color='secondary'
-                        />
-                     </IconButton>
-                  </Tooltip>
-               )}
-               <Tooltip title='Visit Github repo'>
-                  <IconButton
-                     aria-label='link to repo'
-                     className='icon-button'
-                     target='_blank'
-                     href={githubUrl}
-                     size='large'
-                  >
-                     <GitHubIcon fontSize='inherit' color='secondary' />
-                  </IconButton>
-               </Tooltip>
-            </div>
          </div>
          <div className='project-list-item-img'>
             <img src={image} alt={name} loading='lazy'></img>
+         </div>
+         <div className='project-list-icons'>
+            {homepageUrl && (
+               <Tooltip title='View live link'>
+                  <IconButton
+                     aria-label='link to deployment'
+                     target='_blank'
+                     href={homepageUrl}
+                     className='icon-button'
+                     size='large'
+                  >
+                     <OpenInBrowserIcon fontSize='inherit' color='secondary' />
+                  </IconButton>
+               </Tooltip>
+            )}
+            <Tooltip title='Visit Github repo'>
+               <IconButton
+                  aria-label='link to repo'
+                  className='icon-button'
+                  target='_blank'
+                  href={githubUrl}
+                  size='large'
+               >
+                  <GitHubIcon fontSize='inherit' color='secondary' />
+               </IconButton>
+            </Tooltip>
          </div>
       </div>
    );

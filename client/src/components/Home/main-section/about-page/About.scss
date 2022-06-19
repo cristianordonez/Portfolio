@@ -3,8 +3,8 @@
 .about-container {
    @include set-size(100%);
    @include flex-center();
-   flex-wrap: wrap;
-   gap: 5rem;
+   flex-wrap: no-wrap;
+   // gap: 5rem;
    padding-top: 1rem;
    animation: fade-in 1s linear forwards;
    ul {
@@ -31,8 +31,11 @@
       margin: 0;
       padding: 0;
       img {
-         @include set-size(20rem, auto);
+         @include set-size(15rem, auto);
          object-fit: cover;
+      }
+      @include devices(mobile) {
+         display: none;
       }
    }
    .about-list {
