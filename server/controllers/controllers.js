@@ -28,7 +28,6 @@ module.exports = {
       //when webhook is received, sends another graphQL query to get data for changed repo data
       //original request will contain all data except img, so graphQL req will be sent to obtain this value
       updateRepos: async function (req, res) {
-         console.log('req.body.repository:', req.body.repository);
          try {
             let repoToUpdate = await githubAPIHelper.getSingleRepo(
                req.body.repository.name

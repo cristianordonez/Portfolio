@@ -3,6 +3,7 @@ import './Landing.scss';
 import { Button } from '@mui/material';
 import Scroll from 'react-scroll';
 const scroller = Scroll.scroller;
+import Typography from '@mui/material/Typography';
 
 const Landing = () => {
    const handleClick = () => {
@@ -13,9 +14,12 @@ const Landing = () => {
       <div className='landing' id='home'>
          <div className='background-shapes'></div>
          <div className='heading-container'>
-            <h1>Hi, I'm Cristian Ordoñez.</h1>
+            <Typography variant='h1'>Hi, I'm Cristian Ordoñez.</Typography>
          </div>
-         <p className='landing-text'>I am a full-stack web developer.</p>
+         <Typography className='landing-text' variant='body1'>
+            I am a full-stack web developer .
+         </Typography>
+         {/* <p className='landing-text'>I am a full-stack web developer.</p> */}
          <Button
             onClick={() => handleClick()}
             color='secondary'

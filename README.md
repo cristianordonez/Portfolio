@@ -90,4 +90,5 @@ npm run cypress
 
 -  [Improved security of website or application with Cloudflare](https://www.cloudflare.com/)
 -  [Getting app ready for heroku deployment](https://devcenter.heroku.com/articles/preparing-a-codebase-for-heroku-deployment)
+-  [Cloudflare SSL/TLS](https://www.cloudflare.com/ssl/)
 -  [MongoDB Atlas for DB hosting](https://www.mongodb.com/cloud/atlas/lp/try2?utm_content=rlsavisitor&utm_source=google&utm_campaign=gs_americas_uscan_search_core_brand_atlas_desktop_rlsa&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=14291004479&adgroup=128837427307&gclid=Cj0KCQjwhqaVBhCxARIsAHK1tiOPiMcUkWIb4qkCZ0XPpMXPyTg6LjP9Lj2WYlgis6eT9VkGFFiK0B4aArHFEALw_wcB)

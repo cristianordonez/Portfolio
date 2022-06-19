@@ -12,22 +12,40 @@
    z-index: 10;
    color: $text-color;
    padding: 0 5% 0 5%;
-   font-size: 20px;
-   .navbar-links {
-      @include set-size(100%);
-      @include flex-center();
-      gap: 5rem;
-      .navlink {
-         color: $text-color;
-         text-decoration: none;
-         cursor: pointer;
-      }
-      .navlink-active {
-         color: $alternate-color;
-      }
-   }
-   .navbar-icons {
-      @include flex-center();
-      gap: 0.5rem;
-   }
+   font-size: 1em;
 }
+
+// .navbar-links {
+//    display: none;
+//    @include set-size(100%);
+//    @include flex-center();
+//    gap: 5rem;
+// }
+
+.navlink {
+   display: none;
+   color: $text-color;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.navlink-active {
+   color: $alternate-color;
+}
+.navbar-icons {
+   @include flex-center();
+   gap: 0.5rem;
+}
+
+.nav-menu {
+   background-color: black;
+   border-radius: 0.25em;
+   display: flex;
+   flex-direction: column;
+}
+
+//todo create the menu open with links
+
+//todo create toggle on click changing class
+
+//todo add media queries to show either option

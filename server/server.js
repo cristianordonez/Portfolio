@@ -22,7 +22,6 @@ app.use(bodyParser.json());
 //ROUTES
 //handles initial graphQL query for all data
 app.get('/api/repos', (req, res) => {
-   console.log('req:', req);
    controllers.repos.getRepos(req, res);
 });
 
@@ -32,7 +31,6 @@ app.post('/api/repos', (req, res) => {
 
 //handles automatic webhook integration
 app.post('/', (req, res) => {
-   console.log('here in update');
    controllers.repos.updateRepos(req, res);
 });
 

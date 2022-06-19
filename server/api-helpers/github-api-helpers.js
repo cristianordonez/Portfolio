@@ -62,7 +62,6 @@ const getSingleRepo = (repoName) => {
       },
    });
    let promiseData = promise.then((response) => {
-      console.log('response.data.data:', response.data.data);
       return response.data.data.repositoryOwner.repository;
    });
    return promiseData;
