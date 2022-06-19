@@ -5,29 +5,22 @@ $secondary-contrast-color: #d5e0ea;
 $alternate-color: #f3c969;
 $text-color: #d5e0ea;
 
-@mixin for-phone-only {
-   @media (max-width: 599px) {
-      @content;
+// We define the mixins for two major breakpoints mobile and tablet
+
+// $breakpoint is the variable that can have several values
+@mixin devices($breakpoint) {
+   //the name of the mixin is devices
+
+   @if $breakpoint == tablet {
+      @media only screen and (max-width: 680px) {
+         @content;
+      }
    }
-}
-@mixin for-tablet-portrait-up {
-   @media (min-width: 600px) {
-      @content;
-   }
-}
-@mixin for-tablet-landscape-up {
-   @media (min-width: 900px) {
-      @content;
-   }
-}
-@mixin for-desktop-up {
-   @media (min-width: 1200px) {
-      @content;
-   }
-}
-@mixin for-big-desktop-up {
-   @media (min-width: 1800px) {
-      @content;
+
+   @if $breakpoint == mobile {
+      @media only screen and (max-width: 481px) {
+         @content;
+      }
    }
 }
 

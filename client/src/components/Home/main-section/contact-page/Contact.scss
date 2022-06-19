@@ -8,15 +8,17 @@
    justify-content: center;
    overflow: hidden;
    opacity: 0;
+   padding-left: 3%;
+   padding-right: 5%;
 }
 .contact-text {
    word-break: break-word;
-   width: 50%;
+   padding-left: 1em;
 }
 .contact-inner-container {
    @include flex-center();
    flex-wrap: wrap;
-   margin: 0 20%;
+   // margin: 0 20%;
    .contact-form-textfield {
       background-color: #1a2027;
       margin: 5px;

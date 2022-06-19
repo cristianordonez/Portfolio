@@ -5,7 +5,6 @@ import TextField from '@mui/material/TextField';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
-import Rocket from './rocket-svg/Rocket.jsx';
 import axios from 'axios';
 
 const Contact = ({ isVisible }) => {
@@ -13,7 +12,6 @@ const Contact = ({ isVisible }) => {
    const [email, setEmail] = useState('');
    const [subject, setSubject] = useState('');
    const [message, setMessage] = useState('');
-   const [beginAnimation, setBeginAnimation] = useState(false);
    const [open, setOpen] = useState(false);
    const [openError, setOpenError] = useState(false);
 
@@ -30,9 +28,6 @@ const Contact = ({ isVisible }) => {
          setEmail('');
          setSubject('');
          setMessage('');
-         setTimeout(() => {
-            setBeginAnimation(false);
-         }, '3000');
       });
       promise.catch((error) => {
          setOpenError(true);
@@ -53,7 +48,7 @@ const Contact = ({ isVisible }) => {
          <Typography align='center' variant='h2'>
             Contact Me
          </Typography>
-         <Typography variant='body1' className='contact-text' align='center'>
+         <Typography variant='body1' className='contact-text' align='left'>
             Interested in working together? Get in touch by filling out the form
             below and I will get back to you as soon as I can.
          </Typography>
@@ -106,7 +101,6 @@ const Contact = ({ isVisible }) => {
                </Button>
             </form>
          </div>
-         {beginAnimation && <Rocket />}
          <Snackbar
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             onClose={handleClose}

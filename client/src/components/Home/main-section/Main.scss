@@ -18,6 +18,10 @@
       @include set-size(100%);
       @include flex-column();
       min-height: 100vh;
+      @include devices(mobile) {
+         padding-left: 3%;
+         padding-right: 3%;
+      }
       padding-left: 15vw;
       padding-right: 15vw;
    }

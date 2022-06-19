@@ -1,7 +1,7 @@
 @use '../../../../App.scss' as *;
 
 #project-list {
-   padding-top: 6rem;
+   padding-top: 3em;
 }
 
 .project-list {
@@ -9,7 +9,7 @@
    align-items: center;
    justify-content: space-between;
    opacity: 0;
-   gap: 8rem;
+   gap: 4em;
    .project-list-title {
       align-self: center;
    }

@@ -12,11 +12,11 @@
    .project-list-item-description {
       @include flex-column();
       // min-height: 100%;
-      width: 40%;
+      width: 100%;
       align-self: flex-start;
       justify-content: space-between;
       align-items: stretch;
-      word-break: break-word;
+      // word-break: break-word;
       gap: 1.5rem;
       .project-text {
          align-self: flex-start;
@@ -35,6 +35,12 @@
    }
    .project-list-item-img {
       img {
+         @include devices(mobile) {
+            @include set-size(auto, 100%);
+         }
+         // @include devices(tablet) {
+         //    @include set-size(auto, 100%);
+         // }
          @include set-size(auto, 40vw);
       }
    }
