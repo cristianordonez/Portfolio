@@ -5,7 +5,7 @@
    @include flex-center();
    flex-wrap: wrap;
    gap: 5rem;
-   padding-top: 15rem;
+   padding-top: 1rem;
    animation: fade-in 1s linear forwards;
    ul {
       list-style: none;
@@ -19,7 +19,7 @@
       font-weight: bold;
    }
    .about-container-text {
-      @include set-size(100%, 50%);
+      @include set-size(100%, 100%);
       @include flex-column();
       gap: 2rem;
       a {

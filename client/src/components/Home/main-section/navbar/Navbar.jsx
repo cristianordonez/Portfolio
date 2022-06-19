@@ -45,6 +45,7 @@ const Nav = () => {
             sx={{
                flexGrow: 1,
                display: { xs: 'none', md: 'flex' },
+               gap: 5,
             }}
          >
             {['home', 'about', 'projects', 'contact'].map((text, index) => (
