@@ -41,19 +41,24 @@ const Nav = () => {
    };
    return (
       <div className='navbar'>
-         {/* <div className='navbar-links'> */}
-         {['home', 'about', 'projects', 'contact'].map((text, index) => (
-            <Link
-               className='navlink'
-               key={index}
-               activeClass='navlink-active'
-               to={text}
-               spy={true}
-            >
-               {text.charAt(0).toUpperCase() + text.slice(1)}
-            </Link>
-         ))}
-         {/* </div> */}
+         <Box
+            sx={{
+               flexGrow: 1,
+               display: { xs: 'none', md: 'flex' },
+            }}
+         >
+            {['home', 'about', 'projects', 'contact'].map((text, index) => (
+               <Link
+                  className='navlink'
+                  key={index}
+                  activeClass='navlink-active'
+                  to={text}
+                  spy={true}
+               >
+                  {text.charAt(0).toUpperCase() + text.slice(1)}
+               </Link>
+            ))}
+         </Box>
          <Box
             sx={{
                flexGrow: 1,
@@ -81,9 +86,23 @@ const Nav = () => {
                         id='composition-menu'
                         aria-labelledby='composition-button'
                      >
-                        <MenuItem>Profile</MenuItem>
-                        <MenuItem>My account</MenuItem>
-                        <MenuItem>Logout</MenuItem>
+                        {['home', 'about', 'projects', 'contact'].map(
+                           (text, index) => (
+                              <MenuItem>
+                                 <Link
+                                    className='navlink'
+                                    key={index}
+                                    activeClass='navlink-active'
+                                    to={text}
+                                    spy={true}
+                                    onClick={handleOpen}
+                                 >
+                                    {text.charAt(0).toUpperCase() +
+                                       text.slice(1)}
+                                 </Link>
+                              </MenuItem>
+                           )
+                        )}
                      </MenuList>
                   </ClickAwayListener>
                </Paper>

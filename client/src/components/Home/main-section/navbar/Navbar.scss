@@ -23,7 +23,6 @@
 // }
 
 .navlink {
-   display: none;
    color: $text-color;
    text-decoration: none;
    cursor: pointer;
@@ -32,6 +31,7 @@
 .navlink-active {
    color: $alternate-color;
 }
+
 .navbar-icons {
    @include flex-center();
    gap: 0.5rem;
