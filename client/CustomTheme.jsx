@@ -32,7 +32,7 @@ const CustomTheme = {
    typography: {
       fontFamily: '"Montserrat",  sans-serif',
       h1: {
-         fontSize: '1.25em',
+         fontSize: '1em',
          fontWeight: 600,
       },
       h2: {
@@ -45,11 +45,11 @@ const CustomTheme = {
          fontSize: '2rem',
       },
       body1: {
-         fontSize: '1em',
+         fontSize: '1 em',
          color: '#d5e0ea',
       },
       body2: {
-         fontSize: '1rem',
+         fontSize: '2vw',
          color: '#d5e0ea',
       },
       subtitle1: {

@@ -31,7 +31,7 @@ const ProjectListItem = ({
          data-testid='project-list-item'
       >
          <div className='project-list-item-description'>
-            <Typography align='left' variant='h3'>
+            <Typography align='center' variant='h3'>
                {repoTitle}
             </Typography>
 

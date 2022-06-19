@@ -8,16 +8,21 @@
    // overflow: hidden;
    .main-about {
       @include set-size(100%);
+      align-self: center;
       @include flex-column();
 
-      height: 100vh;
+      @include devices(tablet) {
+         min-height: 100%;
+      }
+
+      min-height: 100vh;
       padding-left: 15vw;
       padding-right: 15vw;
    }
    .main-projects {
       @include set-size(100%);
       @include flex-column();
-      height: 100vh;
+      min-height: 100vh;
       @include devices(mobile) {
          padding-left: 3%;
          padding-right: 3%;

@@ -4,8 +4,8 @@
    @include set-size(100%);
    @include flex-center();
    flex-wrap: no-wrap;
-   // gap: 5rem;
-   padding-top: 1rem;
+   gap: 1em;
+   padding-top: 2rem;
    animation: fade-in 1s linear forwards;
    ul {
       list-style: none;
@@ -30,16 +30,16 @@
    .about-container-image {
       margin: 0;
       padding: 0;
-      img {
-         @include set-size(15rem, auto);
-         object-fit: cover;
-      }
       @include devices(mobile) {
          display: none;
       }
+      img {
+         @include set-size(20rem, auto);
+         object-fit: cover;
+      }
    }
    .about-list {
-      font-size: 0.8rem;
+      font-size: 1em;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       column-gap: 1.5rem;

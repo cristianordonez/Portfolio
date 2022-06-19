@@ -26,7 +26,7 @@ const ProjectList = ({ isVisible }) => {
          className={currentClass}
          data-testid='project-list'
       >
-         <Typography align='center' className='project-list-title' variant='h2'>
+         <Typography align='left' className='project-list-title' variant='h2'>
             Projects
          </Typography>
          {repos.map((repo) => (
