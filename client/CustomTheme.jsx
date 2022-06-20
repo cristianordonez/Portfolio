@@ -45,12 +45,15 @@ const CustomTheme = {
          fontSize: '2rem',
       },
       body1: {
-         fontSize: '1 em',
+         fontSize: '1em',
          color: '#d5e0ea',
       },
       body2: {
-         fontSize: '1.5vw',
+         fontSize: '1em',
          color: '#d5e0ea',
+         '@media (min-width:600px)': {
+            fontSize: '1rem',
+         },
       },
       subtitle1: {
          fontSize: '1rem',

@@ -35,7 +35,7 @@ const ProjectListItem = ({
                {repoTitle}
             </Typography>
 
-            <Typography className='project-text' align='left' variant='body2'>
+            <Typography className='project-text' align='center' variant='body2'>
                {description}
             </Typography>
          </div>

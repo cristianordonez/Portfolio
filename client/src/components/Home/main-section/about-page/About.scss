@@ -3,7 +3,7 @@
 .about-container {
    @include set-size(100%);
    @include flex-center();
-   flex-wrap: no-wrap;
+   flex-wrap: wrap;
    gap: 1em;
    padding-top: 2rem;
    animation: fade-in 1s linear forwards;
@@ -21,6 +21,8 @@
    .about-container-text {
       @include set-size(100%, 100%);
       @include flex-column();
+      word-break: break-word;
+      // max-width: 1200px;
       gap: 2rem;
       a {
          align-self: flex-start;

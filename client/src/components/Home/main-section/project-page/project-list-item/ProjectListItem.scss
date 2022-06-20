@@ -2,6 +2,7 @@
 
 .project-list-item-container {
    @include flex-center();
+   flex-direction: column;
    gap: 0.75rem;
    align-items: center;
    justify-content: space-between;
@@ -13,13 +14,14 @@
       @include flex-column();
       // min-height: 100%;
       width: 100%;
-      align-self: flex-start;
+      align-self: center;
       justify-content: space-between;
-      align-items: stretch;
+      align-items: center;
       // word-break: break-word;
+      max-width: 1000px;
       gap: 1.5rem;
       .project-text {
-         align-self: flex-start;
+         align-self: center;
          flex-grow: 5;
       }
       .project-list-icons {
