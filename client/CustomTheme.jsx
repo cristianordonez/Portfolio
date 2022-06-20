@@ -49,7 +49,7 @@ const CustomTheme = {
          color: '#d5e0ea',
       },
       body2: {
-         fontSize: '2vw',
+         fontSize: '1.5vw',
          color: '#d5e0ea',
       },
       subtitle1: {
