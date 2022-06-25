@@ -37,17 +37,17 @@ app.post('/', (req, res) => {
    controllers.repos.updateRepos(req, res);
 });
 
+//function that automatically generates refresh tokens from google developer console
+// using access token and the google playground
 const createTransporter = async () => {
    const oauth2Client = new OAuth2(
       process.env.OAUTH_CLIENT_ID,
       process.env.OAUTH_CLIENT_SECRET,
       'https://developers.google.com/oauthplayground'
    );
-
    oauth2Client.setCredentials({
       refresh_token: process.env.REFRESH_TOKEN,
    });
-
    const accessToken = await new Promise((resolve, reject) => {
       oauth2Client.getAccessToken((err, token) => {
          if (err) {
@@ -74,33 +74,25 @@ const createTransporter = async () => {
 
 //handles post requests to contact form
 app.post('/api/contact', (req, res) => {
-   console.log('here in contact form post');
+   //options that will be sent in the email
    let mailOptions = {
       from: req.body.name,
       to: process.env.EMAIL_USERNAME, //receiving address
       subject: req.body.subject,
       text: `${req.body.name} <${req.body.subject}> \n ${req.body.message}`,
    };
+   //create function that calls the function made above to generate refresh token
    const sendEmail = async (options) => {
       try {
          let emailTransporter = await createTransporter();
          await emailTransporter.sendMail(mailOptions);
          res.status(201).send('Success');
       } catch (err) {
-         console.log('err:', err);
          res.status(400).send(err);
       }
    };
-   // let transporter = createTransporter();
+   //now call the function and send the email
    sendEmail(mailOptions);
-   // transporter.sendMail(mailOptions, (err, data) => {
-   //    if (err) {
-   //       console.log(err);
-   //       res.status(400).send('Unable to send message.');
-   //    } else {
-   //       res.status(201).send('Email has been sent');
-   //    }
-   // });
 });
 
 //END ROUTES
