@@ -17,7 +17,7 @@ const Contact = ({ isVisible }) => {
 
    //handles sending email from server using nodemailer
    const handleSubmit = (e) => {
-      setBeginAnimation(true);
+      // setBeginAnimation(true);
       e.preventDefault();
       let requestData = { name, email, subject, message };
       let promise = axios.post(`${__API__}/contact`, requestData);

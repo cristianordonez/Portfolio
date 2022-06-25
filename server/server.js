@@ -9,7 +9,10 @@ const router = express.Router();
 const db = require('./database/db');
 const controllers = require('./controllers/controllers');
 const nodemailer = require('nodemailer');
+const { google } = require('googleapis');
+const OAuth2 = google.auth.OAuth2;
 const compression = require('compression');
+const { OAuth2Client } = require('google-auth-library');
 
 //MIDDLEWARE
 app.use(compression());
@@ -34,34 +37,70 @@ app.post('/', (req, res) => {
    controllers.repos.updateRepos(req, res);
 });
 
-//set up nodemailer transport using OAuth2 to automatically send emails
-let transporter = nodemailer.createTransport({
-   service: 'gmail',
-   auth: {
-      type: 'OAuth2',
-      user: process.env.EMAIL_USERNAME,
-      pass: process.env.EMAIL_PASSWORD,
-      clientId: process.env.OAUTH_CLIENT_ID,
-      clientSecret: process.env.OAUTH_CLIENT_SECRET,
-      refreshToken: process.env.REFRESH_TOKEN,
-   },
-});
+const createTransporter = async () => {
+   const oauth2Client = new OAuth2(
+      process.env.OAUTH_CLIENT_ID,
+      process.env.OAUTH_CLIENT_SECRET,
+      'https://developers.google.com/oauthplayground'
+   );
+
+   oauth2Client.setCredentials({
+      refresh_token: process.env.REFRESH_TOKEN,
+   });
+
+   const accessToken = await new Promise((resolve, reject) => {
+      oauth2Client.getAccessToken((err, token) => {
+         if (err) {
+            reject();
+         }
+         resolve(token);
+      });
+   });
+   //set up nodemailer transport using OAuth2 to automatically send emails
+   const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+         type: 'OAuth2',
+         user: process.env.EMAIL_USERNAME,
+         accessToken,
+         // pass: process.env.EMAIL_PASSWORD,
+         clientId: process.env.OAUTH_CLIENT_ID,
+         clientSecret: process.env.OAUTH_CLIENT_SECRET,
+         refreshToken: process.env.REFRESH_TOKEN,
+      },
+   });
+   return transporter;
+};
 
 //handles post requests to contact form
 app.post('/api/contact', (req, res) => {
+   console.log('here in contact form post');
    let mailOptions = {
       from: req.body.name,
       to: process.env.EMAIL_USERNAME, //receiving address
       subject: req.body.subject,
       text: `${req.body.name} <${req.body.subject}> \n ${req.body.message}`,
    };
-   transporter.sendMail(mailOptions, (err, data) => {
-      if (err) {
-         res.status(400).send('Unable to send message.');
-      } else {
-         res.status(201).send('Email has been sent');
+   const sendEmail = async (options) => {
+      try {
+         let emailTransporter = await createTransporter();
+         await emailTransporter.sendMail(mailOptions);
+         res.status(201).send('Success');
+      } catch (err) {
+         console.log('err:', err);
+         res.status(400).send(err);
       }
-   });
+   };
+   // let transporter = createTransporter();
+   sendEmail(mailOptions);
+   // transporter.sendMail(mailOptions, (err, data) => {
+   //    if (err) {
+   //       console.log(err);
+   //       res.status(400).send('Unable to send message.');
+   //    } else {
+   //       res.status(201).send('Email has been sent');
+   //    }
+   // });
 });
 
 //END ROUTES
