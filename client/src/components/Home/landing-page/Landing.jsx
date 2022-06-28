@@ -17,7 +17,7 @@ const Landing = () => {
             <Typography variant='h1'>Hi, I'm Cristian Ordoñez.</Typography>
          </div>
          <Typography className='landing-text' variant='body2'>
-            I am a full-stack web developer .
+            I am a full stack developer .
          </Typography>
          <Button
             onClick={() => handleClick()}
