@@ -17,7 +17,7 @@ const About = () => {
                Cristian Ordoñez.
             </Typography>
             <Typography className='about-item' variant='body1'>
-               I’m a Registered Dietitian turned Software Developer.
+               I’m a Software Developer and Registered Dietitian.
             </Typography>
             <Typography className='about-item' variant='body1'>
                During my previous experience as an RD, I specialized in working

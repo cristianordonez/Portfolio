@@ -16,8 +16,12 @@ const Landing = () => {
          <div className='heading-container'>
             <Typography variant='h1'>Hi, I'm Cristian Ordoñez.</Typography>
          </div>
-         <Typography className='landing-text' variant='body2'>
-            I am a full stack developer .
+         <Typography
+            className='landing-text'
+            variant='body2'
+            textAlign='center'
+         >
+            I am a Full Stack Developer and Registered Dietitian.
          </Typography>
          <Button
             onClick={() => handleClick()}
