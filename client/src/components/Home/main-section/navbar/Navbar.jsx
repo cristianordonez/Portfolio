@@ -16,25 +16,6 @@ import MenuList from '@mui/material/MenuList';
 import Box from '@mui/material/Box';
 
 const Nav = () => {
-   // const [anchorElNav, setAnchorElNav] =
-   //    (React.useState < null) | (HTMLElement > null);
-   // const [anchorElUser, setAnchorElUser] =
-   //    (React.useState < null) | (HTMLElement > null);
-
-   // const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-   //    setAnchorElNav(event.currentTarget);
-   // };
-   // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-   //    setAnchorElUser(event.currentTarget);
-   // };
-
-   // const handleCloseNavMenu = () => {
-   //    setAnchorElNav(null);
-   // };
-
-   // const handleCloseUserMenu = () => {
-   //    setAnchorElUser(null);
-   // };
    const [isOpen, setOpen] = useState(false);
    const handleOpen = () => {
       setOpen(!isOpen);
@@ -126,7 +107,7 @@ const Nav = () => {
                className='icon-button'
                target='_blank'
                data-testid='linkedin button'
-               href='https://www.linkedin.com/'
+               href='https://www.linkedin.com/in/cristian-ordonez-rd/'
                size='large'
             >
                <LinkedInIcon fontSize='inherit' color='secondary' />
