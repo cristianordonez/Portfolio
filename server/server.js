@@ -45,17 +45,22 @@ const createTransporter = async () => {
       process.env.OAUTH_CLIENT_SECRET,
       'https://developers.google.com/oauthplayground'
    );
+   console.log('oauth2Client: ', oauth2Client);
    oauth2Client.setCredentials({
       refresh_token: process.env.REFRESH_TOKEN,
    });
+
    const accessToken = await new Promise((resolve, reject) => {
       oauth2Client.getAccessToken((err, token) => {
          if (err) {
+            console.log('err in getaccesstoken: ', err);
             reject();
          }
+         console.log('token: ', token);
          resolve(token);
       });
    });
+   console.log('accessToken: ', accessToken);
    //set up nodemailer transport using OAuth2 to automatically send emails
    const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -69,28 +74,34 @@ const createTransporter = async () => {
          refreshToken: process.env.REFRESH_TOKEN,
       },
    });
+   console.log('transporter: ', transporter);
    return transporter;
 };
 
 //handles post requests to contact form
 app.post('/api/contact', (req, res) => {
    //options that will be sent in the email
+   console.log('here in app post contact');
    let mailOptions = {
       from: req.body.name,
       to: process.env.EMAIL_USERNAME, //receiving address
       subject: req.body.subject,
       text: `${req.body.name} <${req.body.subject}> \n ${req.body.message}`,
    };
+   console.log('mailOptions: ', mailOptions);
    //create function that calls the function made above to generate refresh token
    const sendEmail = async (options) => {
       try {
          let emailTransporter = await createTransporter();
+         console.log('emailTransporter: ', emailTransporter);
          await emailTransporter.sendMail(mailOptions);
          res.status(201).send('Success');
       } catch (err) {
+         console.log('err in send email: ', err);
          res.status(400).send(err);
       }
    };
+
    //now call the function and send the email
    sendEmail(mailOptions);
 });

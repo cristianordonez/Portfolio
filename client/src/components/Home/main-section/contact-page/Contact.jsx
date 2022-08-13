@@ -20,7 +20,9 @@ const Contact = ({ isVisible }) => {
       // setBeginAnimation(true);
       e.preventDefault();
       let requestData = { name, email, subject, message };
-      let promise = axios.post(`${__API__}/contact`, requestData);
+      let url = `${__API__}/contact`;
+
+      let promise = axios.post(url, requestData);
       promise.then((response) => {
          setOpenError(false);
          setOpen(true);
