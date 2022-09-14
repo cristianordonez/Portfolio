@@ -54,6 +54,7 @@ module.exports = {
       new HtmlWebpackPlugin({
          title: 'Portfolio',
          template: 'template.html',
+         favicon: './favicon.ico',
       }),
       new MiniCssExtractPlugin(),
       //! uncomment this line to visualize webpack bundles in browser
