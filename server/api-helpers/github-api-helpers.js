@@ -1,9 +1,5 @@
 const axios = require('axios');
-
-//REST api url for getting public repos
 const url = 'https://api.github.com/users/cristianordonez/repos';
-
-//GraphQL endpoint url
 const graphQLUrl = 'https://api.github.com/graphql';
 
 let graphQLQuery = {
@@ -40,7 +36,6 @@ const getSingleRepoQuery = (repoName) => {
    };
 };
 
-//gets all repos
 const getReposFromGithub = () => {
    let promise = axios.post(graphQLUrl, graphQLQuery, {
       headers: {

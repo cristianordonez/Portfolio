@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const path = require('path');
 const DIST_DIR = path.join(__dirname, '/client/dist');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,7 +9,6 @@ const BundleAnalyzerPlugin =
 
 let apiHost;
 
-//todo change production path
 let setupAPI = function () {
    if (process.env.NODE_ENV === 'development') {
       apiHost = JSON.stringify('/api');
@@ -31,7 +29,6 @@ module.exports = {
    module: {
       rules: [
          {
-            //enables webpack to handle jsx files
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
@@ -41,7 +38,6 @@ module.exports = {
             use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
          },
          {
-            //enables webpack to handle images
             test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
             type: 'asset/resource',
          },
@@ -57,7 +53,6 @@ module.exports = {
          favicon: './favicon.ico',
       }),
       new MiniCssExtractPlugin(),
-      //! uncomment this line to visualize webpack bundles in browser
       // new BundleAnalyzerPlugin(),
    ],
 };
