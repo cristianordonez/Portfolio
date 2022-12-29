@@ -1,9 +1,9 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import './About.scss';
-import Resume from '../../../../../../public/Resume_2022.pdf';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+import Resume from '../../../../../../public/cristian_ordonez_resume.pdf';
+import './About.scss';
 import PortfolioImage from './pngcoverpic.png';
 
 const About = () => {
