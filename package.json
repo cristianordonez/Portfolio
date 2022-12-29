@@ -7,7 +7,7 @@
       "test": "jest",
       "cypress": "cypress open",
       "dev": "concurrently -n 'webpack,server' -c 'bgBlue.bold,bgGreen.bold' \"npx webpack serve --open --config webpack.dev.js\" \"nodemon server/server.js\"",
-      "start": "webpack --config webpack.prod.js & nodemon server/server.js"
+      "start": "webpack --config webpack.prod.js & node server/server.js & node -r newrelic server/server.js"
    },
    "repository": {
       "type": "git",
@@ -35,6 +35,7 @@
       "mini-css-extract-plugin": "^2.6.0",
       "mongodb": "^4.5.0",
       "mongoose": "^6.3.3",
+      "newrelic": "^9.7.4",
       "nodemailer": "^6.7.5",
       "nodemon": "^2.0.16",
       "react": "^18.1.0",
