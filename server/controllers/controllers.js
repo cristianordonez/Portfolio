@@ -1,4 +1,3 @@
-//interacts with server and models
 const models = require('../models/models');
 const githubAPIHelper = require('../api-helpers/github-api-helpers');
 

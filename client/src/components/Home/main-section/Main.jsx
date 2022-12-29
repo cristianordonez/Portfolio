@@ -1,8 +1,8 @@
-import React, { useRef, lazy, Suspense } from 'react';
-import './Main.scss';
 import CssBaseline from '@mui/material/CssBaseline';
+import React, { lazy, Suspense, useRef } from 'react';
 import Element from 'react-scroll/modules/components/Element';
 import useIntersectionObserver from '../../../Hooks/useIntersectionObserver.jsx';
+import './Main.scss';
 import Navbar from './navbar/Navbar.jsx';
 
 const ProjectList = lazy(() =>
@@ -14,11 +14,9 @@ const About = lazy(() => import('./about-page/About.jsx'));
 const Main = () => {
    //used to see if these sections are in viewport
    const contactSection = useRef(null);
-   const projectSection = useRef(null);
+   const projectSection = useRef(null); //contact section uses projectsection to render so that there are no issues with scrolling
    const aboutSection = useRef(null);
-   //contact section uses projectSection to render so that there are no issues with scrolling
-   //contact section does get its ref however to start animation
-   const isContactSectionVisible = useIntersectionObserver(contactSection);
+   const isContactSectionVisible = useIntersectionObserver(contactSection); //contact section does get its ref to start animation
    const isProjectSectionVisible = useIntersectionObserver(projectSection);
    const isAboutSectionVisible = useIntersectionObserver(aboutSection);
 
@@ -27,8 +25,6 @@ const Main = () => {
          <CssBaseline />
          <Navbar />
          <section ref={aboutSection} className='main-about'>
-            {/* about section does not get lazy loaded, but when */}
-            {/* it is visible the rest of the page will load  */}
             <Element id='about'>
                <Suspense fallback={<></>}>
                   <About />

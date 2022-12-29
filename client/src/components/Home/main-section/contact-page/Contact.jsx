@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Typography from '@mui/material/Typography';
-import './Contact.scss';
-import TextField from '@mui/material/TextField';
-import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import axios from 'axios';
+import React, { useState } from 'react';
+import './Contact.scss';
 
 const Contact = ({ isVisible }) => {
    const [name, setName] = useState('');
@@ -17,7 +17,6 @@ const Contact = ({ isVisible }) => {
 
    //handles sending email from server using nodemailer
    const handleSubmit = (e) => {
-      // setBeginAnimation(true);
       e.preventDefault();
       let requestData = { name, email, subject, message };
       let url = `${__API__}/contact`;
