@@ -1,0 +1,57 @@
+@use '../../../App.scss' as *;
+
+.project-list {
+   @include flex-center();
+   gap: 1rem;
+   @include flex-column();
+   img {
+      opacity: 0.6;
+      @include devices(mobile) {
+         max-width: 300px;
+      }
+      max-width: 1200px;
+   }
+   img:hover {
+      opacity: 1;
+   }
+
+   padding-top: 3rem;
+}
+
+#outer-container {
+   @include flex-center();
+   .slider {
+      overflow-x: scroll;
+      display: flex;
+      max-width: 1208px;
+      @include devices(mobile) {
+         max-width: 308px;
+      }
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      .slider-contents {
+         width: 100%;
+         display: flex;
+         gap: 1rem;
+         .slider-card {
+            min-width: 95%;
+            margin: 0 5px;
+         }
+      }
+   }
+}
+
+.animate-projects {
+   animation: appear 1s linear forwards;
+}
+
+@keyframes appear {
+   0% {
+      opacity: 0;
+      transform: translateX(100%);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0%);
+   }
+}

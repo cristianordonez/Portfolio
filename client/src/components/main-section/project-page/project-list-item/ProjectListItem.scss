@@ -1,0 +1,25 @@
+@use '../../../App.scss' as *;
+
+.project-list-item {
+   @include flex-column();
+   gap: 1rem;
+   @include devices(mobile) {
+      max-width: 300px;
+   }
+   img {
+      opacity: 0.5;
+      width: 100%;
+      @include devices(mobile) {
+         max-width: 300px;
+      }
+      //   max-width: 1000px;
+   }
+   img:hover {
+      opacity: 1;
+   }
+   .item-description {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+}
