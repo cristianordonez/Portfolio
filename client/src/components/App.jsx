@@ -1,15 +1,14 @@
 import React, { lazy } from 'react';
 import './App.scss';
-import Landing from './Home/landing-page/Landing.jsx';
-const Main = lazy(() => import('./Home/main-section/Main.jsx'));
+import Landing from './main-section/landing-page/Landing.jsx';
 
-const App = () => {
+const Main = lazy(() => import('./main-section/Main.jsx'));
+
+export default function App() {
    return (
       <>
          <Landing />
          <Main />
       </>
    );
-};
-
-export default App;
+}

@@ -1,16 +1,12 @@
 $primary-color: #0a1929;
-$secondary-color: #a1e8cc;
-$high-contrast-color: #5dfdcb;
-$secondary-contrast-color: #d5e0ea;
-$alternate-color: #f3c969;
+$secondary-color: #5dfdcb;
+$contrast-color: #f3c969;
 $text-color: #d5e0ea;
 
 // We define the mixins for two major breakpoints mobile and tablet
 
 // $breakpoint is the variable that can have several values
 @mixin devices($breakpoint) {
-   //the name of the mixin is devices
-
    @if $breakpoint == desktop {
       @media only screen and (max-width: 2560px) {
          @content;

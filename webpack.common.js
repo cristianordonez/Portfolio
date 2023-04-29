@@ -4,14 +4,14 @@ const DIST_DIR = path.join(__dirname, '/client/dist');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
-const BundleAnalyzerPlugin =
-   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin =
+// require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 let apiHost;
 
-let setupAPI = function () {
+const setupAPI = function () {
    if (process.env.NODE_ENV === 'development') {
-      apiHost = JSON.stringify('/api');
+      apiHost = JSON.stringify('http://localhost:8080/api');
    } else {
       apiHost = JSON.stringify('/api');
    }

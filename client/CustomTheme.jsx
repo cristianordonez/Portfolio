@@ -5,7 +5,7 @@ const CustomTheme = {
       box: 1,
    },
    palette: {
-      type: 'light',
+      type: 'dark',
       primary: {
          main: '#0a1929',
       },
@@ -16,7 +16,7 @@ const CustomTheme = {
          main: '#d5e0ea',
       },
       contrast: {
-         main: '#a1e8cc',
+         main: '#F3C969',
       },
       background: {
          default: '#2A2A2A',
@@ -30,34 +30,38 @@ const CustomTheme = {
       textfield: '#d5e0ea',
    },
    typography: {
-      fontFamily: '"Montserrat",  sans-serif',
+      fontFamily: '"Open Sans",  sans-serif',
+      // h1 is used for landing page title
       h1: {
-         fontSize: '1em',
+         fontSize: '1rem',
          fontWeight: 600,
       },
       h2: {
-         color: '#F3C969',
          fontSize: '3rem',
-         fontWeight: 400,
+         fontWeight: 800,
       },
       h3: {
-         color: '#5dfdcb',
          fontSize: '2rem',
+         fontWeight: 700,
       },
       body1: {
-         fontSize: '1em',
-         color: '#d5e0ea',
+         fontSize: '1rem',
+         fontWeight: 400,
       },
       body2: {
-         fontSize: '1em',
-         color: '#d5e0ea',
+         fontSize: '1.2rem',
+         fontWeight: 400,
          '@media (min-width:600px)': {
             fontSize: '1rem',
          },
       },
       subtitle1: {
          fontSize: '1rem',
-         color: '#F3C969',
+      },
+      subtitle2: {
+         fontSize: '1rem',
+         fontFamily: 'JetBrains Mono',
+         fontWeight: 600,
       },
    },
 };

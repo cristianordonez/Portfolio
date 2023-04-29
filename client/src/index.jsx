@@ -9,10 +9,6 @@ import CustomTheme from '../CustomTheme.jsx';
 import App from './components/App.jsx';
 import './Index.scss';
 
-const { palette } = createTheme();
-const { augmentColor } = palette;
-const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
-
 let theme = createTheme(CustomTheme);
 theme = responsiveFontSizes(theme);
 const root = ReactDOM.createRoot(document.getElementById('root'));
