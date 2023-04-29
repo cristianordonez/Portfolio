@@ -63,6 +63,12 @@ This opens a development server in your local browser at port 3000.
 -  When application is ready for production, have webpack build your bundle and minimize your files:
 
 ```bash
+npm run build
+```
+
+-  To view production build, start node server:
+
+```bash
 npm start
 ```
 
