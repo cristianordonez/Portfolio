@@ -1,10 +1,8 @@
-import React from 'react';
-import ProjectList from './ProjectList.jsx';
 import { render, screen, waitFor } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
-import userEvent from '@testing-library/user-event';
 import axiosMock from 'axios';
+import React from 'react';
 import 'regenerator-runtime/runtime';
+import ProjectList from './ProjectList.jsx';
 
 test('Project List renders correctly', async () => {
    render(<ProjectList />);

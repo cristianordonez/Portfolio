@@ -11,5 +11,6 @@ module.exports = async () => {
          '\\.(gif|ttf|eot|svg|pdf|png)$': '<rootDir>/__mocks__/fileMock.js',
       },
       moduleFileExtensions: ['js', 'jsx'],
+      globals: { __API__: 'http://localhost:8080' },
    };
 };
