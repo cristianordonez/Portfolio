@@ -10,6 +10,7 @@ const ProjectList = lazy(() =>
 );
 const Contact = lazy(() => import('./contact-page/Contact.jsx'));
 const About = lazy(() => import('./about-page/About.jsx'));
+const Footer = lazy(() => import('./footer/Footer.jsx'));
 
 export default function Main() {
    const contactSection = useRef(null);
@@ -24,7 +25,6 @@ export default function Main() {
          <CssBaseline />
          <Navbar />
          <section ref={aboutSection} id='about' className='main-section'>
-            {/* <section ref={aboutSection} className='main-section'> */}
             <Element id='element-section'>
                <Suspense fallback={<></>}>
                   <About />
@@ -48,6 +48,9 @@ export default function Main() {
                   </Suspense>
                </Element>
             )}
+         </section>
+         <section id='footer'>
+            <Footer />
          </section>
       </div>
    );

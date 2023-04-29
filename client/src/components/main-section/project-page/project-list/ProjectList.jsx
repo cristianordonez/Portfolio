@@ -43,7 +43,7 @@ export default function ProjectList({ isVisible }) {
       }
       if (sliderRef.current) {
          let currentPosition =
-            sliderRef.current.scrollLeft + (imageWidthRef.current + 10);
+            sliderRef.current.scrollLeft + (imageWidthRef.current + 20);
          sliderRef.current.scrollLeft = currentPosition;
          setScrollPosition(currentPosition);
          const maxPosition =
@@ -61,7 +61,7 @@ export default function ProjectList({ isVisible }) {
       setShowBtnRight(true);
       if (sliderRef.current) {
          let currentPosition =
-            sliderRef.current.scrollLeft - (imageWidthRef.current + 10);
+            sliderRef.current.scrollLeft - (imageWidthRef.current + 20);
          sliderRef.current.scrollLeft = currentPosition;
          currentPosition < 0
             ? setScrollPosition(0)

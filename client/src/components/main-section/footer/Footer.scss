@@ -1,0 +1,6 @@
+@use '../../App.scss' as *;
+
+.footer-container {
+   @include set-size(100%);
+   @include flex-center();
+}
