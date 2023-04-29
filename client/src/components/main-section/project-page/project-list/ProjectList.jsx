@@ -81,12 +81,7 @@ export default function ProjectList({ isVisible }) {
 
    return (
       <div className='project-list'>
-         <Typography
-            align='left'
-            variant='h2'
-            color='contrast'
-            sx={{ alignSelf: 'center' }}
-         >
+         <Typography variant='h2' className='section-title'>
             Projects
          </Typography>
          <Typography

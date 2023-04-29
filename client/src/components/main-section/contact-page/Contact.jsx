@@ -46,11 +46,7 @@ export default function Contact({ isVisible }) {
 
    return (
       <div className={currentClass} data-testid='contact-container'>
-         <Typography
-            align='left'
-            sx={{ alignSelf: 'flex-start', color: '#F3C969' }}
-            variant='h2'
-         >
+         <Typography className='section-title' variant='h2'>
             Contact Me
          </Typography>
          <Typography variant='body1' className='contact-text' align='left'>
