@@ -39,15 +39,7 @@ export default function ProjectList({ isVisible }) {
       axios
          .get(`${__API__}/repos`)
          .then((repos) => {
-            // !change this back
-            // setRepos(repos.data);
-            let test = [];
-            for (let i = 0; i < repos.data.length; i++) {
-               test.push(repos.data[i]);
-               test.push(repos.data[i]);
-            }
-            console.log('test: ', test);
-            setRepos(test);
+            setRepos(repos.data);
          })
          .catch((err) => {
             console.log(err.response);
@@ -77,8 +69,6 @@ export default function ProjectList({ isVisible }) {
 
    // updates visibility of left and right arrow buttons based on scroll position
    const handleShowBtns = (currentPosition) => {
-      console.log('currentPosition in handle show btns: ', currentPosition);
-      console.log('maxWidth: ', maxWidth);
       if (currentPosition > 0) {
          setShowBtnLeft(true);
       } else {
@@ -91,7 +81,10 @@ export default function ProjectList({ isVisible }) {
       }
    };
 
-   const handleUpdateIndex = (currentPosition) => {};
+   const handleUpdateIndex = (currentPosition) => {
+      let updatedIndex = Math.round(currentPosition / imageWidth);
+      setCurrentIndex(updatedIndex);
+   };
 
    // creates the index titles used in project-nav-row
    const counts = useMemo(() => {
@@ -106,7 +99,6 @@ export default function ProjectList({ isVisible }) {
    // todo this will be called on ALL scrolls to update index and buttons
    const handleScroll = useCallback(() => {
       const currentPosition = sliderRef.current.scrollLeft;
-      console.log('currentPosition: ', currentPosition);
       handleUpdateIndex(currentPosition);
       handleShowBtns(currentPosition);
    }, [imageWidth]);
