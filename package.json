@@ -1,6 +1,6 @@
 {
    "name": "portfolio-custom-template",
-   "version": "1.0.0",
+   "version": "2.1.0",
    "description": "Custom template for creating portfolios",
    "main": "server.js",
    "scripts": {
