@@ -56,6 +56,8 @@ export default function About() {
                <li>&nbsp;FastAPI</li>
                <li>&nbsp;Jest</li>
                <li>&nbsp;Cypress</li>
+               <li>&nbsp;AWS</li>
+               <li>&nbsp;Azure</li>
             </ul>
             <Button
                size='small'
